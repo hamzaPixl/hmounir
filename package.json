@@ -1,14 +1,17 @@
 {
-  "name": "v4",
-  "description": "Personal Website V4",
+  "name": "hmounir",
+  "description": "Personal Website V2",
   "version": "1.0.0",
-  "author": "Brittany Chiang <brittany.chiang@gmail.com>",
+  "author": "Hamza Mounir <hamza.pixelle@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bchiang7/v4"
+    "url": "https://github.com/hamzaPixl/hmounir"
   },
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "personnal website",
+    "resume",
+    "netlify"
   ],
   "license": "MIT",
   "browserslist": "> 0.25%, not dead",
