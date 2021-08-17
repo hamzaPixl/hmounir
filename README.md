@@ -87,15 +87,15 @@
 | White          | ![#e6f1ff](https://via.placeholder.com/10/e6f1ff?text=+) `#e6f1ff` |
 | Green          | ![#64ffda](https://via.placeholder.com/10/64ffda?text=+) `#64ffda` |
 
-## Credits
+## 📌 Credits
 
 Big up to [Brittany Chiang](https://brittanychiang.com) for her project that inspire me to adapt it on m own, Thanks!
 
-## Roadmap
+## 📈 Roadmap
 
 See the [open issues](https://github.com/hamzaPixl/hmounir/issues) for a list of proposed features (and known issues).
 
-## Contributing
+## ✏️ Contributing
 
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
@@ -105,21 +105,21 @@ Contributions are what make the open source community such an amazing place to b
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## License
+## 🎗 License
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
-## Contact
+## ✉️ Contact
 
 Hamza Mounir - [@pixlhamza](https://twitter.com/pixlhamza) - hamza.pixelle@gmail.com
 
-## Support
+## ✅ Support
 
 Contributions, issues, and feature requests are welcome!
 
 Give a ⭐️ if you like this project!
 
-## Acknowledgments
+## 🔎 Acknowledgments
 
 Project base from [bchiang7-v4](https://github.com/bchiang7/v4)
 
