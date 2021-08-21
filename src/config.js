@@ -1,29 +1,39 @@
 module.exports = {
-  email: 'brittany.chiang@gmail.com',
-
+  general: {
+    lastName: 'Mounir',
+    firstName: 'Hamza',
+    email: 'hmounir.work@gmail.com',
+    birth: '1996-02-23',
+    title: 'Medior Software Engenieer',
+    location: 'Bruxelles, Belgium',
+  },
+  languages: ['French', 'English', 'Arabic', 'Dutch'],
+  interests: ['Gaming', 'Football', 'Traveling', 'Coding'],
+  skills: [
+    'Web applications, services, websites, apis',
+    'Database analyse',
+    'Backend support',
+    'DevOps and maintaining',
+    'Release and production support',
+  ],
   socialMedia: [
     {
       name: 'GitHub',
-      url: 'https://github.com/bchiang7',
+      url: 'https://github.com/hamzaPixl/"',
     },
     {
       name: 'Instagram',
-      url: 'https://www.instagram.com/bchiang7',
+      url: 'https://www.instagram.com/hamza.pixl/',
     },
     {
       name: 'Twitter',
-      url: 'https://twitter.com/bchiang7',
+      url: 'https://twitter.com/pixlhamza',
     },
     {
       name: 'Linkedin',
-      url: 'https://www.linkedin.com/in/bchiang7',
-    },
-    {
-      name: 'Codepen',
-      url: 'https://codepen.io/bchiang7',
+      url: 'https://www.linkedin.com/in/hamza-mounir-0a7bb6139/',
     },
   ],
-
   navLinks: [
     {
       name: 'About',
@@ -42,7 +52,6 @@ module.exports = {
       url: '/#contact',
     },
   ],
-
   colors: {
     green: '#64ffda',
     navy: '#0a192f',
