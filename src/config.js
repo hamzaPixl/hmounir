@@ -10,11 +10,12 @@ module.exports = {
   languages: ['French', 'English', 'Arabic', 'Dutch'],
   interests: ['Gaming', 'Football', 'Traveling', 'Coding'],
   skills: [
-    'Web applications, services, websites, apis',
     'Database analyse',
     'Backend support',
     'DevOps and maintaining',
-    'Release and production support',
+    'Production support',
+    'Web applications',
+    'Web services',
   ],
   techs: ['JavaScript', 'TypeScript', 'Nestjs', 'React', 'Docker', 'Nodejs'],
   socialMedia: [
