@@ -16,10 +16,11 @@ module.exports = {
     'DevOps and maintaining',
     'Release and production support',
   ],
+  techs: ['JavaScript', 'TypeScript', 'Nestjs', 'React', 'Docker', 'Nodejs'],
   socialMedia: [
     {
       name: 'GitHub',
-      url: 'https://github.com/hamzaPixl/"',
+      url: 'https://github.com/hamzaPixl/',
     },
     {
       name: 'Instagram',

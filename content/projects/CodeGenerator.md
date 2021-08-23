@@ -3,7 +3,7 @@ date: '2021-07-21'
 title: 'Code generator'
 github: 'https://github.com/hamzaPixl/protobuf-ts-generator'
 external: 'https://marketplace.visualstudio.com/items?itemName=hamzaPixl.protobuf-ts-generator'
-cover: 'https://raw.githubusercontent.com/hamzaPixl/protobuf-ts-generator/master/images/icon.png'
+cover: './images/codegenerator.png'
 tags:
   - Code
   - Generator

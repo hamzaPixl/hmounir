@@ -143,7 +143,7 @@ const StyledProject = styled.li`
     }
   }
 
-  .project-tech-list {
+  .project-tag-list {
     display: flex;
     align-items: flex-end;
     flex-grow: 1;
@@ -170,7 +170,7 @@ const Projects = () => {
       projects: allMarkdownRemark(
         filter: {
           fileAbsolutePath: { regex: "/projects/" }
-          frontmatter: { showInProjects: { ne: false } }
+          frontmatter: { featured: { ne: false } }
         }
         sort: { fields: [frontmatter___date], order: DESC }
       ) {
@@ -178,7 +178,7 @@ const Projects = () => {
           node {
             frontmatter {
               title
-              tech
+              tags
               github
               external
             }
@@ -212,7 +212,7 @@ const Projects = () => {
 
   const projectInner = node => {
     const { frontmatter, html } = node;
-    const { github, external, title, tech } = frontmatter;
+    const { github, external, title, tags } = frontmatter;
 
     return (
       <div className="project-inner">
@@ -250,10 +250,10 @@ const Projects = () => {
         </header>
 
         <footer>
-          {tech && (
-            <ul className="project-tech-list">
-              {tech.map((tech, i) => (
-                <li key={i}>{tech}</li>
+          {tags && (
+            <ul className="project-tag-list">
+              {tags.map((tag, i) => (
+                <li key={i}>{tag}</li>
               ))}
             </ul>
           )}

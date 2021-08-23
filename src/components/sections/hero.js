@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
-import { email } from '@config';
+import { general } from '@config';
 import { navDelay, loaderDelay } from '@utils';
 import { usePrefersReducedMotion } from '@hooks';
 
@@ -59,20 +59,24 @@ const Hero = () => {
   }, []);
 
   const one = <h1>Hi, my name is</h1>;
-  const two = <h2 className="big-heading">Brittany Chiang.</h2>;
-  const three = <h3 className="big-heading">I build things for the web.</h3>;
+  const two = (
+    <h2 className="big-heading">
+      {general.firstName} {general.lastName}.
+    </h2>
+  );
+  const three = <h3 className="big-heading">{general.title}.</h3>;
   const four = (
     <p>
-      I'm a software engineer specializing in building (and occasionally designing) exceptional
-      digital experiences. Currently, I'm focused on building accessible, human-centered products at{' '}
-      <a href="https://upstatement.com/" target="_blank" rel="noreferrer">
-        Upstatement
+      I'm a software engineer specializing in building web services but also websites and more.
+      Currently, I'm focused on building insurance products at{' '}
+      <a href="https://qover.com/" target="_blank" rel="noreferrer">
+        Qover
       </a>
       .
     </p>
   );
   const five = (
-    <a href={`mailto:${email}`} className="email-link">
+    <a href={`mailto:${general.email}`} className="email-link">
       Get In Touch
     </a>
   );

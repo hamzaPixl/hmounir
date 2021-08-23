@@ -2,7 +2,7 @@
 date: '2021-07-21'
 title: 'Nbs'
 external: 'https://www.nbsboxing.com/'
-cover: 'https://www.nbsboxing.com/wp-content/uploads/2021/07/logo-nbs2-1.png'
+cover: './images/nbs.png'
 tags:
   - Express
   - Nodejs

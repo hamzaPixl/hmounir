@@ -56,7 +56,7 @@ const StyledProject = styled.li`
         padding: 25px 25px 20px;
       }
     }
-    .project-tech-list {
+    .project-tag-list {
       justify-content: flex-end;
 
       @media (max-width: 768px) {
@@ -176,7 +176,7 @@ const StyledProject = styled.li`
     }
   }
 
-  .project-tech-list {
+  .project-tag-list {
     display: flex;
     flex-wrap: wrap;
     position: relative;
@@ -297,7 +297,10 @@ const Featured = () => {
   const data = useStaticQuery(graphql`
     {
       featured: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/featured/" } }
+        filter: {
+          fileAbsolutePath: { regex: "/projects/" }
+          frontmatter: { featured: { ne: true } }
+        }
         sort: { fields: [frontmatter___date], order: DESC }
       ) {
         edges {
@@ -309,7 +312,7 @@ const Featured = () => {
                   gatsbyImageData(width: 700, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
                 }
               }
-              tech
+              tags
               github
               external
             }
@@ -344,7 +347,7 @@ const Featured = () => {
         {featuredProjects &&
           featuredProjects.map(({ node }, i) => {
             const { frontmatter, html } = node;
-            const { external, title, tech, github, cover } = frontmatter;
+            const { external, title, tags, github, cover } = frontmatter;
             const image = getImage(cover);
 
             return (
@@ -362,10 +365,10 @@ const Featured = () => {
                       dangerouslySetInnerHTML={{ __html: html }}
                     />
 
-                    {tech.length && (
-                      <ul className="project-tech-list">
-                        {tech.map((tech, i) => (
-                          <li key={i}>{tech}</li>
+                    {tags.length && (
+                      <ul className="project-tag-list">
+                        {tags.map((tag, i) => (
+                          <li key={i}>{tag}</li>
                         ))}
                       </ul>
                     )}

@@ -3,7 +3,7 @@ date: '2021-07-21'
 title: 'Salat'
 github: 'https://github.com/hamzaPixl/salat'
 external: 'https://salat.hmounir.com/'
-cover: 'https://github.com/hamzaPixl/salat/raw/master/src/images/screen.png'
+cover: './images/salat.png'
 tags:
   - Gatsby
   - muslim
