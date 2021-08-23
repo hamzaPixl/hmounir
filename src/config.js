@@ -7,8 +7,6 @@ module.exports = {
     title: 'Medior Software Engenieer',
     location: 'Bruxelles, Belgium',
   },
-  languages: ['French', 'English', 'Arabic', 'Dutch'],
-  interests: ['Gaming', 'Football', 'Traveling', 'Coding'],
   skills: [
     'Database analyse',
     'Backend support',
@@ -55,7 +53,7 @@ module.exports = {
     },
   ],
   colors: {
-    green: '#64ffda',
+    green: '#f73859',
     navy: '#0a192f',
     darkNavy: '#020c1b',
   },
