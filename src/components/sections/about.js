@@ -146,21 +146,27 @@ const About = () => {
               <a href="https://qover.com/">Qover</a>. But also spend a lot of time recently to build
               a muslim web app name <a href="https://salat.hmounir.com/">Salat</a>.
             </p>
-
-            <p>Here are a some skills about my job:</p>
           </div>
-
-          <ul className="skills-list">
-            {skills && skills.map((skill, i) => <li key={i}>{skill}</li>)}
-          </ul>
 
           <div>
-            <p>Here are a few technologies I've been working with recently:</p>
+            <br />
+            <div>
+              <p>Here are a some skills about my job</p>
+            </div>
+            <ul className="skills-list">
+              {skills && skills.map((skill, i) => <li key={i}>{skill}</li>)}
+            </ul>
           </div>
 
-          <ul className="skills-list">
-            {techs && techs.map((tech, i) => <li key={i}>{tech}</li>)}
-          </ul>
+          <div>
+            <br />
+            <div>
+              <p>Here are a few technologies I've been working with recently</p>
+            </div>
+            <ul className="skills-list">
+              {techs && techs.map((tech, i) => <li key={i}>{tech}</li>)}
+            </ul>
+          </div>
         </StyledText>
 
         <StyledPic>
