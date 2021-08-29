@@ -152,11 +152,19 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-gtag`,
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingId: `G-282900826`,
-        head: false,
-        anonymize: true,
+        trackingIds: [
+          'G-282900826', // Google Analytics / GA
+        ],
+        gtagConfig: {
+          anonymize_ip: true,
+          cookie_expires: 0,
+        },
+        pluginConfig: {
+          head: false,
+          respectDNT: true,
+        },
       },
     },
   ],
