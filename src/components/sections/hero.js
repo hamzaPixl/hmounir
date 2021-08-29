@@ -76,9 +76,11 @@ const Hero = () => {
     </p>
   );
   const five = (
-    <a href={`mailto:${general.email}`} className="email-link">
-      Get In Touch
-    </a>
+    <div>
+      <a href={`/pensieve`} className="email-link">
+        Checkout the blog
+      </a>
+    </div>
   );
 
   const items = [one, two, three, four, five];

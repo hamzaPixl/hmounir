@@ -3,7 +3,7 @@ title: Go to production with Netlify
 description: Deploy your first website with netlify in one click.
 date: 2021-04-21
 draft: false
-slug: /pensieve/clickable-cards
+slug: /pensieve/netlify
 tags:
   - Netlify
   - Production
@@ -80,14 +80,14 @@ Here it comes you have an `url` to go with it.
 
 [Github](https://github.com/hamzaPixl/posts-netlify)
 
-## 🎗 License
+## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
-## ✉️ Contact
+## Contact
 
 Hamza Mounir - [@pixlhamza](https://twitter.com/pixlhamza) - hamza.pixelle@gmail.com
 
-## ✅ Support
+## Support
 
 Give a ⭐️ if you like this post!
