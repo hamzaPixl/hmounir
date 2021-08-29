@@ -42,7 +42,7 @@ cd netlify-test && git push
 
 Now you need to create you netlify account for that you just have to follow the few steps that is on their website.
 
-![Account](./account.jpg)
+![Account](./account.png)
 
 Once you got your account you have this overview and a button where you can add a new website.
 
@@ -50,26 +50,26 @@ Once you got your account you have this overview and a button where you can add 
 
 Here comes the integration part to you repository where you pushed your react app before. You can link it via the button `New site from Git` after that you just have to follow the steps and connect to you `github account` to graunt acces to it.
 
-![New](./newWebsite.jpg)
+![New](./newSite.png)
 
 # Deployment
 
 To prepare the deployment you have to setup it on the last step of your github repository integration. To run our application we are going to serve the `build` and add the configuration to netlify.
 
-![Build](./build.jpg)
+![Build](./build.png)
 
 You have of course some `logs`about the deploy to see if everythings runs fine.
 
-![Deploy](./deploy.jpg)
+![Deploy](./deploy.png)
 
 # Custom domain
 
 You can chose to add a `custom domain` to your application, you can easily found that on the settings of the website.
 
-![Domain](./domain.jpg)
+![Domain](./domain.png)
 
 # Live to production
 
 Here it comes you have an `url` to go with it.
 
-![DoProdmain](./prod.jpg)
+![DoProdmain](./prod.png)
