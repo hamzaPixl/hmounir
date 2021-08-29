@@ -13,14 +13,16 @@ tags:
   - Integration
 ---
 
-# Introduction
+# Go to production with Netlify
+
+## Introduction
 
 Nowdays creating an html page is so easy or even a react app, how about publish them with some few click on this lovely mouse ?
 Integration become more and more the key of developement using tools helps you to move so fast on building your business. Focusing more on your productivity and let some part be managed by people who worked on it. Creating you react application is a thing going to production, be live with the website is another. With [Netlify](https://www.netlify.com/) you can literally deploy your website with peanut confihuration for any web app.
 
 Were going to see here how this integration work and how you can be live easily with netlify. Some prerequirements for this, you will need to own an account on Github for the repository, and creating a free Netlify account for the deployment part. Yup you read it it's free. You can also attach it to your custom domain and be totaly transparent about the provider.
 
-# Creating repository
+## Creating repository
 
 We are going to create a simple `react app` for that and push it to our `repository`.
 
@@ -38,7 +40,7 @@ Push to the repository:
 cd netlify-test && git push
 ```
 
-# Netlify account
+## Netlify account
 
 Now you need to create you netlify account for that you just have to follow the few steps that is on their website.
 
@@ -46,13 +48,13 @@ Now you need to create you netlify account for that you just have to follow the 
 
 Once you got your account you have this overview and a button where you can add a new website.
 
-# Github Integration
+## Github Integration
 
 Here comes the integration part to you repository where you pushed your react app before. You can link it via the button `New site from Git` after that you just have to follow the steps and connect to you `github account` to graunt acces to it.
 
 ![New](./newSite.png)
 
-# Deployment
+## Deployment
 
 To prepare the deployment you have to setup it on the last step of your github repository integration. To run our application we are going to serve the `build` and add the configuration to netlify.
 
@@ -62,14 +64,30 @@ You have of course some `logs`about the deploy to see if everythings runs fine.
 
 ![Deploy](./deploy.png)
 
-# Custom domain
+## Custom domain
 
 You can chose to add a `custom domain` to your application, you can easily found that on the settings of the website.
 
 ![Domain](./domain.png)
 
-# Live to production
+## Live to production
 
 Here it comes you have an `url` to go with it.
 
 ![DoProdmain](./prod.png)
+
+## Source
+
+[Github](https://github.com/hamzaPixl/posts-netlify)
+
+## 🎗 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+## ✉️ Contact
+
+Hamza Mounir - [@pixlhamza](https://twitter.com/pixlhamza) - hamza.pixelle@gmail.com
+
+## ✅ Support
+
+Give a ⭐️ if you like this post!
