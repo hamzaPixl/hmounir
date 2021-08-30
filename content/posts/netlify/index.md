@@ -13,8 +13,6 @@ tags:
   - Integration
 ---
 
-# Go to production with Netlify
-
 ## Introduction
 
 Nowdays creating an html page is so easy or even a react app, how about publish them with some few click on this lovely mouse ?
