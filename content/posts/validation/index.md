@@ -214,7 +214,7 @@ module.exports = {
 For the `middleware` we create a file for it `./middlewares/validator.js`.
 Here you pass the `schema` as a `parameter` that is used to do the validation of the `req.body`.
 If the validation fail we send a `404` error with a nice `code` and a `message` and the `details` of why it failed.
-When everyting went good it just pass to the next function. To read more about [middleware](!http://expressjs.com/en/guide/using-middleware.html#using-middleware).
+When everyting went good it just pass to the next function. To read more about [middleware](http://expressjs.com/en/guide/using-middleware.html#using-middleware).
 
 ```javascript
 const { isValid } = require('../utils/validator');
