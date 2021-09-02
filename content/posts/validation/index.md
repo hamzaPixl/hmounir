@@ -3,7 +3,7 @@ title: How to validate your input
 description: How to do validation for you REST application.
 date: 2021-04-21
 draft: false
-slug: /pensieve/clickable-cards
+slug: /pensieve/validation
 tags:
   - Validation
   - Ajv
@@ -64,7 +64,7 @@ app.listen(port, () => {
 
 ## Route
 
-Let's add a `POST` route were we are going to caputre to data we want to validate. And also respond with the validation errors or if its valide.
+Let's add a `POST` route were we are going to caputre to data we want to validate. And also respond with the validation errors or if its valid.
 
 ```javascript
 app.post('/', (req, res) => {
@@ -121,7 +121,7 @@ function isValid(input, schema) {
   if (!valid) {
     return validate.errors;
   }
-  return { valide: true };
+  return { valid: true };
 }
 ```
 
@@ -166,8 +166,91 @@ Response :
 
 ```json
 {
-  "valide": true
+  "valid": true
 }
+```
+
+## Middleware
+
+Developpers are lazy persons right ? We like automation we dont want to write this for all kind of `validation`. To repeat and isolate the process we are going to create a `middleware` that we could attach to any route to have a validation on early stage.
+To have scalable way to add schema validation we can separate here 3 things :
+
+- The `middleware` for the validation only.
+- The `validator` that is generic for all schemas.
+- The `schema` for the type of input.
+
+```json
+{
+  "code": "VALIDATION_ERROR",
+  "message": "Validation of the payload ",
+  "details": [
+    {
+      "instancePath": "",
+      "schemaPath": "#/required",
+      "keyword": "required",
+      "params": {
+        "missingProperty": "foo"
+      },
+      "message": "must have required property 'foo'"
+    }
+  ]
+}
+```
+
+For the `schema` we create a file for it `./schemas/foo.js`.
+
+```javascript
+module.exports = {
+  type: 'object',
+  properties: {
+    foo: { type: 'integer' },
+    bar: { type: 'string' },
+  },
+  required: ['foo'],
+  additionalProperties: false,
+};
+```
+
+For the `middleware` we create a file for it `./middlewares/validator.js`.
+Here you pass the `schema` as a `parameter` that is used to do the validation of the `req.body`.
+If the validation fail we send a `404` error with a nice `code` and a `message` and the `details` of why it failed.
+When everyting went good it just pass to the next function. To read more about [middleware](!http://expressjs.com/en/guide/using-middleware.html#using-middleware).
+
+```javascript
+const { isValid } = require('../utils/validator');
+
+module.exports = schema => (req, res, next) => {
+  const result = isValid(req.body, schema);
+  if (Array.isArray(result)) {
+    // array means we have errors
+    return res.status(404).send({
+      code: 'VALIDATION_ERROR',
+      message: 'Validation of the payload ',
+      details: result,
+    });
+  }
+  next();
+};
+```
+
+For the `utils` we create a file for it `./utils/validator.js`.
+
+```javascript
+const Ajv = require('ajv');
+const ajv = new Ajv();
+
+function isValid(input, schema) {
+  const validate = ajv.compile(schema);
+  const valid = validate(input);
+  if (!valid) {
+    return validate.errors;
+  }
+  return { valid: true };
+}
+
+module.exports = {
+  isValid,
+};
 ```
 
 ## Source
