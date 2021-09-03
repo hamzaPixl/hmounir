@@ -78,7 +78,7 @@ const Hero = () => {
   const five = (
     <div>
       <a href={`/pensieve`} className="email-link">
-        Checkout the blog
+        Blog posts
       </a>
     </div>
   );
