@@ -158,8 +158,7 @@ const BlogPage = ({ location, data }) => {
           {posts.length > 0 &&
             posts.map(({ node }, i) => {
               const { frontmatter } = node;
-              const { title, description, slug, date, tags } = frontmatter;
-              const formattedDate = new Date(date).toLocaleDateString();
+              const { title, description, slug, tags } = frontmatter;
 
               return (
                 <StyledPost key={i}>
@@ -175,7 +174,6 @@ const BlogPage = ({ location, data }) => {
                     </header>
 
                     <footer>
-                      <span className="post__date">{formattedDate}</span>
                       <ul className="post__tags">
                         {tags.map((tag, i) => (
                           <li key={i}>

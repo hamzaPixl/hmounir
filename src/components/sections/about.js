@@ -135,16 +135,17 @@ const About = () => {
           <div>
             <p>
               Hi, my name is {general.firstName} and I enjoy creating projects that can be fun or
-              that solve a problem. My interest in web development started after i finished my
+              that solve a problem. My interest in web development started after I finished my
               computer science degree. I love the fact that a simple API can reach thousands even
-              million of people and give a real added value. Turns out web developmentis really
+              millions of people and give a real added value. Turns out web development is really
               funny and you can imagine a lot of different ideas.
             </p>
-
+            My main focus these days is building insurance products and digital experiences at
+            Qover. But also spend a lot of time recently building a Muslim web app name Salat.
             <p>
               My main focus these days is building insurance products and digital experiences at{' '}
-              <a href="https://qover.com/">Qover</a>. But also spend a lot of time recently to build
-              a muslim web app name <a href="https://salat.hmounir.com/">Salat</a>.
+              <a href="https://qover.com/">Qover</a>. But also spend a lot of time recently building
+              a Muslim web app name <a href="https://salat.hmounir.com/">Salat</a>.
             </p>
           </div>
 
