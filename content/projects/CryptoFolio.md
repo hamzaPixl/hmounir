@@ -15,4 +15,4 @@ showInProjects: true
 featured: false
 ---
 
-Virtual crypto wallet to see the values of your crypto currencies. See some news, price, total amount, and can be configurable. Simple application that I create to be run as a desktop app for any os. I was tired to open multiple website, centralized informations in local so just for the info.
+Virtual crypto wallet to see the values of your cryptocurrencies. See some news, price, total amount, and can be configurable. Simple application that I create to be run as a desktop app for any os. I was tired to open multiple websites, centralized information locally so just for you.

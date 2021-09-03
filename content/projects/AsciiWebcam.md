@@ -14,4 +14,6 @@ showInProjects: true
 featured: false
 ---
 
-Simple lightweight application writes in Python runs by a command line. It simple capture your webcam flux and render it as a matrix style video. It’s rendering live so quite funny.
+A lightweight application writes in Python runs by a command line.
+It simply captures your webcam flux and renders it as a matrix-style video.
+It’s rendering live, quite funny.

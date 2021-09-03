@@ -13,4 +13,4 @@ showInProjects: true
 featured: false
 ---
 
-A traditional game adapted with the real rules as many times apps that I see use different ones. We love this game with theses strict rules. La Loi is the key. Have fun with the game if you try it !
+A traditional game adapted with the real rules as many times apps that I see use different ones. We love this game with these strict rules. La Loi is the key. Have fun with the game if you try it!
