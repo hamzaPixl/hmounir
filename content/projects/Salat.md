@@ -12,7 +12,7 @@ tags:
   - React
   - Javascript
 showInProjects: true
-featured: true
+featured: false
 ---
 
 I always wanted to build something that can be useful for a community. The first community I am in from my birth is Muslim! What a great opportunity for me to build something that can bring me peace and satisfaction and also be useful for other people.

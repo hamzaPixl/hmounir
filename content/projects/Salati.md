@@ -2,7 +2,7 @@
 date: '2021-07-21'
 title: 'Salati'
 github: 'https://github.com/hamzaPixl/salati'
-external: 'https://api.salati.hmounir.com/health'
+external: 'http://salati.hmounir.com/docs/static/index.html'
 cover: './images/salat.png'
 tags:
   - Fastify
@@ -13,8 +13,8 @@ tags:
   - Heroku
   - Nodejs
   - Javascript
-showInProjects: true
-featured: false
+showInProjects: false
+featured: true
 ---
 
 I always wanted to build something that can be useful for a community. The first community I am in from my birth is Muslim! What a great opportunity for me to build something that can bring me peace and satisfaction and also be useful for other people.

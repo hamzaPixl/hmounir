@@ -10,7 +10,7 @@ tags:
   - Rest
   - Heroku
   - Javascript
-showInProjects: true
+showInProjects: false
 featured: true
 ---
 

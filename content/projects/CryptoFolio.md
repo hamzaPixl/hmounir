@@ -11,8 +11,8 @@ tags:
   - Electron
   - JavaScript
   - Desktop
-showInProjects: true
-featured: false
+showInProjects: false
+featured: true
 ---
 
 Virtual crypto wallet to see the values of your cryptocurrencies. See some news, price, total amount, and can be configurable. Simple application that I create to be run as a desktop app for any os. I was tired to open multiple websites, centralized information locally so just for you.

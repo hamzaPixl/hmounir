@@ -12,7 +12,7 @@ tags:
   - Vscode
   - Extension
   - Azure
-showInProjects: true
+showInProjects: false
 featured: true
 ---
 
