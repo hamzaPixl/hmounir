@@ -11,3 +11,5 @@ export { default as IconStar } from './star';
 export { default as IconTwitter } from './twitter';
 export { default as IconFacebook } from './facebook';
 export { default as IconReddit } from './reddit';
+export { default as IconSun } from './sun';
+export { default as IconMoon } from './moon';

@@ -13,6 +13,8 @@ import {
   IconTwitter,
   IconReddit,
   IconFacebook,
+  IconSun,
+  IconMoon,
 } from '@components/icons';
 
 const Icon = ({ name }) => {
@@ -41,6 +43,10 @@ const Icon = ({ name }) => {
       return <IconFacebook />;
     case 'Reddit':
       return <IconReddit />;
+    case 'Moon':
+      return <IconMoon />;
+    case 'Sun':
+      return <IconSun />;
     default:
       return <IconExternal />;
   }
