@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql, Link } from 'gatsby';
 import kebabCase from 'lodash/kebabCase';
 import PropTypes from 'prop-types';
+import { Icon } from '@components/icons';
 import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
 import { Layout } from '@components';
@@ -49,10 +50,23 @@ const StyledPostContent = styled.div`
     padding: 0;
   }
 `;
-
+const StyledPostSharing = styled.div`
+  text-align: center;
+  justify-content: space-between;
+  svg {
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+  }
+  a {
+    ${({ theme }) => theme.mixins.inlineLink};
+  }
+`;
 const PostTemplate = ({ data, location }) => {
   const { frontmatter, html } = data.markdownRemark;
   const { title, date, tags } = frontmatter;
+
+  const url = encodeURIComponent(location.href);
 
   return (
     <Layout location={location}>
@@ -86,6 +100,31 @@ const PostTemplate = ({ data, location }) => {
         </StyledPostHeader>
 
         <StyledPostContent dangerouslySetInnerHTML={{ __html: html }} />
+        <StyledPostSharing>
+          <div>Thanks for the support ! Share.</div>
+          <div>
+            <a
+              href={`https://twitter.com/share?url=${url}&text=${title}&hashtags=${tags.join(',')}`}
+              aria-label="Twitter Share">
+              <Icon name="Twitter" />
+            </a>
+            <a
+              href={`https://www.linkedin.com/sharing/share-offsite/?url=${url}&Title=${title}`}
+              aria-label="Linkedin Share">
+              <Icon name="Linkedin" />
+            </a>
+            <a
+              href={`http://reddit.com/submit?url=${url}&title=${title}`}
+              aria-label="Reddit Share">
+              <Icon name="Reddit" />
+            </a>
+            <a
+              href={`https://www.facebook.com/sharer.php?u=${url}&t=${title}`}
+              aria-label="Facebook Share">
+              <Icon name="Facebook" />
+            </a>
+          </div>
+        </StyledPostSharing>
       </StyledPostContainer>
     </Layout>
   );
