@@ -25,7 +25,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   :focus {
-    outline: 2px dashed var(--higlight);
+    outline: 2px dashed ${({ theme }) => theme.higlight};
     outline-offset: 3px;
   }
 
@@ -173,7 +173,7 @@ const GlobalStyle = createGlobalStyle`
       counter-increment: section;
       content: '0' counter(section) '.';
       margin-right: 10px;
-      color: var(--higlight);
+      color: ${({ theme }) => theme.higlight};
       font-family: var(--font-mono);
       font-size: clamp(var(--fz-md), 3vw, var(--fz-xl));
       font-weight: 400;
@@ -240,7 +240,7 @@ const GlobalStyle = createGlobalStyle`
 
     &:hover,
     &:focus {
-      color: var(--higlight);
+      color: ${({ theme }) => theme.higlight};
     }
 
     &.inline-link {
@@ -304,14 +304,14 @@ const GlobalStyle = createGlobalStyle`
           content: '▹';
           position: absolute;
           left: 0;
-          color: var(--higlight);
+          color: ${({ theme }) => theme.higlight};
         }
       }
     }
   }
 
   blockquote {
-    border-left-color: var(--higlight);
+    border-left-color: ${({ theme }) => theme.higlight};
     border-left-style: solid;
     border-left-width: 1px;
     margin-left: 0px;
@@ -351,7 +351,7 @@ const GlobalStyle = createGlobalStyle`
 
     &:focus,
     &:active {
-      background-color: var(--higlight);
+      background-color: ${({ theme }) => theme.higlight};
       color: ${props => props.theme.navy};
       top: 0;
       left: 0;
@@ -363,18 +363,18 @@ const GlobalStyle = createGlobalStyle`
   }
 
   #logo {
-    color: var(--higlight);
+    color: ${({ theme }) => theme.higlight};
   }
 
   .overline {
-    color: var(--higlight);
+    color: ${({ theme }) => theme.higlight};
     font-family: var(--font-mono);
     font-size: var(--fz-md);
     font-weight: 400;
   }
 
   .subtitle {
-    color: var(--higlight);
+    color: ${({ theme }) => theme.higlight};
     margin: 0 0 20px 0;
     font-size: var(--fz-md);
     font-family: var(--font-mono);
@@ -397,7 +397,7 @@ const GlobalStyle = createGlobalStyle`
     display: flex;
     align-items: center;
     margin-bottom: 50px;
-    color: var(--higlight);
+    color: ${({ theme }) => theme.higlight};
 
     .arrow {
       display: block;

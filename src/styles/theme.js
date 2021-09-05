@@ -11,23 +11,23 @@ const light = {
   lightslate: '#082032',
   lightestslate: '#334756',
   white: '#fffbff',
-  higlight: '#fb3640',
-  higlighttint: 'rgba(251, 54, 64, 0.1)',
+  higlight: '#e63946',
+  higlighttint: 'rgba(230, 57, 70, 0.1)',
 };
 
 const dark = {
-  darknavy: 'rgba(10, 25, 47, 0.85)',
-  navy: '#001d3d',
-  lightnavy: '#003566',
-  lightestnavy: '#233554',
+  darknavy: 'rgba(2, 4, 15, 0.85)',
+  navy: '#000000',
+  lightnavy: '#011627',
+  lightestnavy: '#ced4da',
   navyshadow: 'rgba(2, 12, 27, 0.7)',
   darkslate: '#495670',
-  slate: '#8892b0',
-  lightslate: '#a8b2d1',
-  lightestslate: '#ccd6f6',
+  slate: '#ffffff',
+  lightslate: '#ced4da',
+  lightestslate: '#ffffff',
   white: '#e6f1ff',
-  higlight: '#ffc300',
-  higlighttint: 'rgba(255, 214, 10, 0.1)',
+  higlight: '#e63946',
+  higlighttint: 'rgba(230, 57, 70, 0.1)',
 };
 
 const theme = isDark => {

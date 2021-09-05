@@ -80,15 +80,15 @@
 
 | Color          | Hex                                                                |
 | -------------- | ------------------------------------------------------------------ |
-| Dark Navy      | ![#0A192F](https://via.placeholder.com/10/0A192F?text=+) `#0A192F` |
-| Navy           | ![#001d3d](https://via.placeholder.com/10/001d3d?text=+) `#001d3d` |
-| Light Navy     | ![#003566](https://via.placeholder.com/10/003566?text=+) `#003566` |
-| Lightest Navy  | ![#233554](https://via.placeholder.com/10/233554?text=+) `#233554` |
-| Slate          | ![#8892b0](https://via.placeholder.com/10/8892b0?text=+) `#8892b0` |
-| Light Slate    | ![#a8b2d1](https://via.placeholder.com/10/a8b2d1?text=+) `#a8b2d1` |
-| Lightest Slate | ![#ccd6f6](https://via.placeholder.com/10/ccd6f6?text=+) `#ccd6f6` |
+| Dark Navy      | ![#02040f](https://via.placeholder.com/10/02040f?text=+) `#02040f` |
+| Navy           | ![#000000](https://via.placeholder.com/10/000000?text=+) `#000000` |
+| Light Navy     | ![#011627](https://via.placeholder.com/10/011627?text=+) `#011627` |
+| Lightest Navy  | ![#ced4da](https://via.placeholder.com/10/ced4da?text=+) `#ced4da` |
+| Slate          | ![#ffffff](https://via.placeholder.com/10/ffffff?text=+) `#ffffff` |
+| Light Slate    | ![#ced4da](https://via.placeholder.com/10/ced4da?text=+) `#ced4da` |
+| Lightest Slate | ![#ffffff](https://via.placeholder.com/10/ffffff?text=+) `#ffffff` |
 | White          | ![#e6f1ff](https://via.placeholder.com/10/e6f1ff?text=+) `#e6f1ff` |
-| Highlight      | ![#ffc300](https://via.placeholder.com/10/ffc300?text=+) `#ffc300` |
+| Highlight      | ![#e63946](https://via.placeholder.com/10/e63946?text=+) `#e63946` |
 
 ### Light
 
@@ -98,11 +98,11 @@
 | Navy           | ![#fbfefb](https://via.placeholder.com/10/fbfefb?text=+) `#fbfefb` |
 | Light Navy     | ![#ffffff](https://via.placeholder.com/10/ffffff?text=+) `#ffffff` |
 | Lightest Navy  | ![#bcb8b1](https://via.placeholder.com/10/bcb8b1?text=+) `#bcb8b1` |
-| Slate          | ![#082032](https://via.placeholder.com/10/082032?text=+) `#082032` |
+| Slate          | ![#000000](https://via.placeholder.com/10/000000?text=+) `#000000` |
 | Light Slate    | ![#082032](https://via.placeholder.com/10/082032?text=+) `#082032` |
 | Lightest Slate | ![#334756](https://via.placeholder.com/10/334756?text=+) `#334756` |
 | White          | ![#fffbff](https://via.placeholder.com/10/fffbff?text=+) `#fffbff` |
-| Highlight      | ![#fb3640](https://via.placeholder.com/10/fb3640?text=+) `#fb3640` |
+| Highlight      | ![#e63946](https://via.placeholder.com/10/e63946?text=+) `#e63946` |
 
 ## 📌 Credits
 

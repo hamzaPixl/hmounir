@@ -68,7 +68,7 @@ const mixins = {
         width: 100%;
       }
       & > * {
-        color: ${props => props.theme.higlight}; !important;
+        color: ${props => props.theme.higlight} !important;
         transition: var(--transition);
       }
     }

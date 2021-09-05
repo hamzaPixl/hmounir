@@ -38,7 +38,7 @@ const StyledPostContent = styled.div`
   }
 
   code {
-    background-color: ${({ theme }) => theme.slate};
+    background-color: #454647;
     color: ${({ theme }) => theme.white};
     border-radius: var(--border-radius);
     font-size: var(--fz-sm);

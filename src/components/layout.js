@@ -1,8 +1,8 @@
-import React, { useEffect, useContext, useState } from 'react';
+import React, { useEffect, useContext } from 'react';
 import PropTypes from 'prop-types';
 import styled, { ThemeProvider, ThemeContext } from 'styled-components';
-import { Head, Nav, Social, Email, Footer } from '@components';
-import { GlobalStyle, theme } from '@styles';
+import { Head, Nav, Social, Email, Footer, useDarkMode } from '@components';
+import { GlobalStyle, theme as getTheme } from '@styles';
 
 // https://medium.com/@chrisfitkin/how-to-smooth-scroll-links-in-gatsby-3dc445299558
 if (typeof window !== 'undefined') {
@@ -48,18 +48,15 @@ const Layout = ({ children, location }) => {
     handleExternalLinks();
   }, []);
 
-  const [themeS, setThemeS] = useState('light');
-  const isDark = () => themeS === 'dark';
-  const changeTheme = () => {
-    themeS === 'light' ? setThemeS('dark') : setThemeS('light');
-  };
+  const [theme, themeToggler] = useDarkMode();
+  const isDark = () => theme === 'dark';
 
   return (
     <>
       <Head />
 
       <div id="root">
-        <ThemeProvider theme={theme(isDark())}>
+        <ThemeProvider theme={getTheme(isDark())}>
           <GlobalStyle />
 
           <a className="skip-to-content" href="#content">
@@ -67,7 +64,7 @@ const Layout = ({ children, location }) => {
           </a>
 
           <StyledContent>
-            <Nav isHome={isHome} changeTheme={changeTheme} isDark={isDark} />
+            <Nav isHome={isHome} changeTheme={themeToggler} isDark={isDark} />
             <Social isHome={isHome} />
             <Email isHome={isHome} />
 

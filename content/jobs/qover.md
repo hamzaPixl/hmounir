@@ -1,6 +1,6 @@
 ---
 date: '2017-20-02'
-title: 'Medior Software Engineer'
+title: 'Software Engineer'
 company: 'Qover'
 location: 'Bruxelles, Belgium'
 range: 'Oct 2017 - Present'

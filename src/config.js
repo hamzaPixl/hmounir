@@ -4,7 +4,7 @@ module.exports = {
     firstName: 'Hamza',
     email: 'hmounir.work@gmail.com',
     birth: '1996-02-23',
-    title: 'Medior Software Engenieer',
+    title: 'Software Engenieer',
     location: 'Bruxelles, Belgium',
   },
   skills: [
