@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
+import { useStyledDarkMode } from 'gatsby-styled-components-dark-mode';
 import PropTypes from 'prop-types';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled, { css } from 'styled-components';
 import { navLinks } from '@config';
 import { useScrollDirection, usePrefersReducedMotion } from '@hooks';
 import { Menu } from '@components';
-import { IconLogo } from '@components/icons';
+import { IconLogo, IconSun, IconMoon } from '@components/icons';
 
 const StyledHeader = styled.header`
   ${({ theme }) => theme.mixins.flexBetween};
@@ -16,7 +17,7 @@ const StyledHeader = styled.header`
   padding: 0px 50px;
   width: 100%;
   height: var(--nav-height);
-  background-color: rgba(10, 25, 47, 0.85);
+  background-color: var(--dark-navy);
   filter: none !important;
   pointer-events: auto !important;
   user-select: auto !important;
@@ -37,7 +38,7 @@ const StyledHeader = styled.header`
       css`
         height: var(--nav-scroll-height);
         transform: translateY(0px);
-        background-color: rgba(10, 25, 47, 0.85);
+        background-color: var(--dark-navy);
         box-shadow: 0 10px 30px -10px var(--navy-shadow);
       `};
 
@@ -60,6 +61,15 @@ const StyledNav = styled.nav`
   font-family: var(--font-mono);
   counter-reset: item 0;
   z-index: 12;
+
+  .dark-mode {
+    width: 42px;
+    height: 42px;
+    background-color: transparent;
+    > svg {
+      color: var(--higlight);
+    }
+  }
 
   .logo {
     ${({ theme }) => theme.mixins.flexCenter};
@@ -131,6 +141,12 @@ const Nav = ({ isHome }) => {
   const scrollDirection = useScrollDirection('down');
   const [scrolledToTop, setScrolledToTop] = useState(true);
   const prefersReducedMotion = usePrefersReducedMotion();
+  const { toggleDark, isDark } = useStyledDarkMode();
+
+  const switchMode = () => {
+    toggleDark();
+    //location.reload();
+  };
 
   const handleScroll = () => {
     setScrolledToTop(window.pageYOffset < 50);
@@ -171,6 +187,12 @@ const Nav = ({ isHome }) => {
     </div>
   );
 
+  const DarkMode = (
+    <button className="dark-mode" onClick={() => switchMode()}>
+      {isDark ? <IconSun /> : <IconMoon />}
+    </button>
+  );
+
   const ResumeLink = (
     <a className="resume-button" href="/resume.pdf" target="_blank" rel="noopener noreferrer">
       Resume
@@ -183,7 +205,6 @@ const Nav = ({ isHome }) => {
         {prefersReducedMotion ? (
           <>
             {Logo}
-
             <StyledLinks>
               <ol>
                 {navLinks &&
@@ -193,6 +214,7 @@ const Nav = ({ isHome }) => {
                     </li>
                   ))}
               </ol>
+              <div>{DarkMode}</div>
               <div>{ResumeLink}</div>
             </StyledLinks>
 
@@ -227,6 +249,16 @@ const Nav = ({ isHome }) => {
                 {isMounted && (
                   <CSSTransition classNames={fadeDownClass} timeout={timeout}>
                     <div style={{ transitionDelay: `${isHome ? navLinks.length * 100 : 0}ms` }}>
+                      {DarkMode}
+                    </div>
+                  </CSSTransition>
+                )}
+              </TransitionGroup>
+
+              <TransitionGroup component={null}>
+                {isMounted && (
+                  <CSSTransition classNames={fadeDownClass} timeout={timeout}>
+                    <div style={{ transitionDelay: `${isHome ? navLinks.length * 100 : 0}ms` }}>
                       {ResumeLink}
                     </div>
                   </CSSTransition>
@@ -237,7 +269,14 @@ const Nav = ({ isHome }) => {
             <TransitionGroup component={null}>
               {isMounted && (
                 <CSSTransition classNames={fadeClass} timeout={timeout}>
-                  <Menu />
+                  <div
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                    }}>
+                    {DarkMode}
+                    <Menu />
+                  </div>
                 </CSSTransition>
               )}
             </TransitionGroup>

@@ -1,20 +1,23 @@
 import { css } from 'styled-components';
 
+const colors = css`
+  --dark-navy: ${props => props.theme.darknavy};
+  --navy: ${props => props.theme.navy};
+  --light-navy: ${props => props.theme.lightnavy};
+  --lightest-navy: ${props => props.theme.lightestnavy};
+  --navy-shadow: ${props => props.theme.navyshadow};
+  --dark-slate: ${props => props.theme.darkslate};
+  --slate: ${props => props.theme.slate};
+  --light-slate: ${props => props.theme.lightslate};
+  --lightest-slate: ${props => props.theme.lightestslate};
+  --white: ${props => props.theme.white};
+  --higlight: ${props => props.theme.higlight};
+  --higlight-tint: ${props => props.theme.higlighttint};
+`;
+
 const variables = css`
   :root {
-    --dark-navy: #000814;
-    --navy: #001d3d;
-    --light-navy: #003566;
-    --lightest-navy: #233554;
-    --navy-shadow: rgba(2, 12, 27, 0.7);
-    --dark-slate: #495670;
-    --slate: #8892b0;
-    --light-slate: #a8b2d1;
-    --lightest-slate: #ccd6f6;
-    --white: #e6f1ff;
-    --higlight: #ffc300;
-    --higlight-tint: rgba(255, 214, 10, 0.1);
-
+    ${colors}
     --font-sans: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui,
       sans-serif;
     --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;

@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
 import PropTypes from 'prop-types';
-import styled, { ThemeProvider } from 'styled-components';
+import styled, { ThemeProvider, ThemeContext } from 'styled-components';
 import { Head, Nav, Social, Email, Footer } from '@components';
 import { GlobalStyle, theme } from '@styles';
 
@@ -18,6 +18,7 @@ const StyledContent = styled.div`
 
 const Layout = ({ children, location }) => {
   const isHome = location.pathname === '/';
+  useContext(ThemeContext);
 
   // Sets target="_blank" rel="noopener noreferrer" on external links
   const handleExternalLinks = () => {

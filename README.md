@@ -76,9 +76,11 @@
 
 ## 🎨 Color Reference
 
+### Dark
+
 | Color          | Hex                                                                |
 | -------------- | ------------------------------------------------------------------ |
-| Dark Navy      | ![#000814](https://via.placeholder.com/10/000814?text=+) `#000814` |
+| Dark Navy      | ![#0A192F](https://via.placeholder.com/10/0A192F?text=+) `#0A192F` |
 | Navy           | ![#001d3d](https://via.placeholder.com/10/001d3d?text=+) `#001d3d` |
 | Light Navy     | ![#003566](https://via.placeholder.com/10/003566?text=+) `#003566` |
 | Lightest Navy  | ![#233554](https://via.placeholder.com/10/233554?text=+) `#233554` |
@@ -87,6 +89,20 @@
 | Lightest Slate | ![#ccd6f6](https://via.placeholder.com/10/ccd6f6?text=+) `#ccd6f6` |
 | White          | ![#e6f1ff](https://via.placeholder.com/10/e6f1ff?text=+) `#e6f1ff` |
 | Highlight      | ![#ffc300](https://via.placeholder.com/10/ffc300?text=+) `#ffc300` |
+
+### Light
+
+| Color          | Hex                                                                |
+| -------------- | ------------------------------------------------------------------ |
+| Dark Navy      | ![#FFFCF2](https://via.placeholder.com/10/FFFCF2?text=+) `#FFFCF2` |
+| Navy           | ![#fbfefb](https://via.placeholder.com/10/fbfefb?text=+) `#fbfefb` |
+| Light Navy     | ![#ffffff](https://via.placeholder.com/10/ffffff?text=+) `#ffffff` |
+| Lightest Navy  | ![#bcb8b1](https://via.placeholder.com/10/bcb8b1?text=+) `#bcb8b1` |
+| Slate          | ![#082032](https://via.placeholder.com/10/082032?text=+) `#082032` |
+| Light Slate    | ![#082032](https://via.placeholder.com/10/082032?text=+) `#082032` |
+| Lightest Slate | ![#334756](https://via.placeholder.com/10/334756?text=+) `#334756` |
+| White          | ![#fffbff](https://via.placeholder.com/10/fffbff?text=+) `#fffbff` |
+| Highlight      | ![#fb3640](https://via.placeholder.com/10/fb3640?text=+) `#fb3640` |
 
 ## 📌 Credits
 

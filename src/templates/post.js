@@ -38,8 +38,8 @@ const StyledPostContent = styled.div`
   }
 
   code {
-    background-color: var(--lightest-navy);
-    color: var(--lightest-slate);
+    background-color: ${({ theme }) => theme.slate};
+    color: ${({ theme }) => theme.white};
     border-radius: var(--border-radius);
     font-size: var(--fz-sm);
     padding: 0.2em 0.4em;
@@ -114,14 +114,14 @@ const PostTemplate = ({ data, location }) => {
               <Icon name="Linkedin" />
             </a>
             <a
-              href={`http://reddit.com/submit?url=${url}&title=${title}`}
-              aria-label="Reddit Share">
-              <Icon name="Reddit" />
-            </a>
-            <a
               href={`https://www.facebook.com/sharer.php?u=${url}&t=${title}`}
               aria-label="Facebook Share">
               <Icon name="Facebook" />
+            </a>
+            <a
+              href={`http://reddit.com/submit?url=${url}&title=${title}`}
+              aria-label="Reddit Share">
+              <Icon name="External" />
             </a>
           </div>
         </StyledPostSharing>
