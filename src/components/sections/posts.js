@@ -71,7 +71,7 @@ const StyledPost = styled.li`
     height: 100%;
     padding: 2rem 1.75rem;
     border-radius: var(--border-radius);
-    background-color: var(--light-navy);
+    background-color: ${props => props.theme.lightnavy};
     transition: var(--transition);
   }
 
@@ -80,7 +80,7 @@ const StyledPost = styled.li`
     margin-bottom: 35px;
 
     .folder {
-      color: var(--higlight);
+      color: ${props => props.theme.higlight};
       svg {
         width: 40px;
         height: 40px;
@@ -90,7 +90,7 @@ const StyledPost = styled.li`
 
   .post-title {
     margin: 0 0 10px;
-    color: var(--lightest-slate);
+    color: ${props => props.theme.lightestslate};
     font-size: var(--fz-xxl);
 
     a {
@@ -110,7 +110,7 @@ const StyledPost = styled.li`
   }
 
   .post-description {
-    color: var(--light-slate);
+    color: ${props => props.theme.lightslate};
     font-size: 17px;
 
     a {

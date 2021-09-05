@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useEffect, useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import styled, { ThemeProvider, ThemeContext } from 'styled-components';
 import { Head, Nav, Social, Email, Footer } from '@components';
@@ -48,12 +48,18 @@ const Layout = ({ children, location }) => {
     handleExternalLinks();
   }, []);
 
+  const [themeS, setThemeS] = useState('light');
+  const isDark = () => themeS === 'dark';
+  const changeTheme = () => {
+    themeS === 'light' ? setThemeS('dark') : setThemeS('light');
+  };
+
   return (
     <>
       <Head />
 
       <div id="root">
-        <ThemeProvider theme={theme}>
+        <ThemeProvider theme={theme(isDark())}>
           <GlobalStyle />
 
           <a className="skip-to-content" href="#content">
@@ -61,7 +67,7 @@ const Layout = ({ children, location }) => {
           </a>
 
           <StyledContent>
-            <Nav isHome={isHome} />
+            <Nav isHome={isHome} changeTheme={changeTheme} isDark={isDark} />
             <Social isHome={isHome} />
             <Email isHome={isHome} />
 

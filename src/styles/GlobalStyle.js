@@ -20,8 +20,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   ::selection {
-    background-color: var(--lightest-navy);
-    color: var(--lightest-slate);
+    background-color: ${props => props.theme.lightestnavy};
+    color: ${props => props.theme.lightestslate};
   }
 
   :focus {
@@ -32,17 +32,17 @@ const GlobalStyle = createGlobalStyle`
   /* Scrollbar Styles */
   html {
     scrollbar-width: thin;
-    scrollbar-color: var(--dark-slate) var(--navy);
+    scrollbar-color: ${props => props.theme.darkslate} ${props => props.theme.navy};
   }
   body::-webkit-scrollbar {
     width: 12px;
   }
   body::-webkit-scrollbar-track {
-    background: var(--navy);
+    background: ${props => props.theme.navy};
   }
   body::-webkit-scrollbar-thumb {
-    background-color: var(--dark-slate);
-    border: 3px solid var(--navy);
+    background-color: ${props => props.theme.darkslate};
+    border: 3px solid ${props => props.theme.navy};
     border-radius: 10px;
   }
 
@@ -53,8 +53,8 @@ const GlobalStyle = createGlobalStyle`
     overflow-x: hidden;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    background-color: var(--navy);
-    color: var(--slate);
+    background-color: ${props => props.theme.navy};
+    color: ${props => props.theme.slate};
     font-family: var(--font-sans);
     font-size: var(--fz-xl);
     line-height: 1.3;
@@ -144,7 +144,7 @@ const GlobalStyle = createGlobalStyle`
   h6 {
     margin: 0 0 10px 0;
     font-weight: 600;
-    color: var(--lightest-slate);
+    color: ${props => props.theme.lightestslate};
     line-height: 1.1;
   }
 
@@ -192,7 +192,7 @@ const GlobalStyle = createGlobalStyle`
       width: 300px;
       height: 1px;
       margin-left: 20px;
-      background-color: var(--lightest-navy);
+      background-color: ${props => props.theme.lightestnavy};
 
       @media (max-width: 1080px) {
         width: 200px;
@@ -282,8 +282,8 @@ const GlobalStyle = createGlobalStyle`
     }
 
     & > code {
-      background-color: var(--light-navy);
-      color: var(--white);
+      background-color: ${props => props.theme.lightnavy};
+      color: ${props => props.theme.white};
       font-size: var(--fz-sm);
       border-radius: var(--border-radius);
       padding: 0.3em 0.5em;
@@ -325,7 +325,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   hr {
-    background-color: var(--lightest-navy);
+    background-color: ${props => props.theme.lightestnavy};
     height: 1px;
     border-width: 0px;
     border-style: initial;
@@ -352,7 +352,7 @@ const GlobalStyle = createGlobalStyle`
     &:focus,
     &:active {
       background-color: var(--higlight);
-      color: var(--navy);
+      color: ${props => props.theme.navy};
       top: 0;
       left: 0;
       width: auto;

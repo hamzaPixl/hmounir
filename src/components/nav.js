@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
-import { useStyledDarkMode } from 'gatsby-styled-components-dark-mode';
 import PropTypes from 'prop-types';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled, { css } from 'styled-components';
@@ -17,7 +16,7 @@ const StyledHeader = styled.header`
   padding: 0px 50px;
   width: 100%;
   height: var(--nav-height);
-  background-color: var(--dark-navy);
+  background-color: ${props => props.theme.darknavy};
   filter: none !important;
   pointer-events: auto !important;
   user-select: auto !important;
@@ -38,8 +37,8 @@ const StyledHeader = styled.header`
       css`
         height: var(--nav-scroll-height);
         transform: translateY(0px);
-        background-color: var(--dark-navy);
-        box-shadow: 0 10px 30px -10px var(--navy-shadow);
+        background-color: ${props => props.theme.darknavy};
+        box-shadow: 0 10px 30px -10px ${props => props.theme.navyshadow}; ;
       `};
 
     ${props =>
@@ -48,7 +47,7 @@ const StyledHeader = styled.header`
       css`
         height: var(--nav-scroll-height);
         transform: translateY(calc(var(--nav-scroll-height) * -1));
-        box-shadow: 0 10px 30px -10px var(--navy-shadow);
+        box-shadow: 0 10px 30px -10px ${props => props.theme.navyshadow}; ;
       `};
   }
 `;
@@ -57,7 +56,7 @@ const StyledNav = styled.nav`
   ${({ theme }) => theme.mixins.flexBetween};
   position: relative;
   width: 100%;
-  color: var(--lightest-slate);
+  color: ${props => props.theme.lightestslate};
   font-family: var(--font-mono);
   counter-reset: item 0;
   z-index: 12;
@@ -67,7 +66,7 @@ const StyledNav = styled.nav`
     height: 42px;
     background-color: transparent;
     > svg {
-      color: var(--higlight);
+      color: ${props => props.theme.higlight};
     }
   }
 
@@ -75,14 +74,14 @@ const StyledNav = styled.nav`
     ${({ theme }) => theme.mixins.flexCenter};
 
     a {
-      color: var(--higlight);
+      color: ${props => props.theme.higlight};
       width: 42px;
       height: 42px;
 
       &:hover,
       &:focus {
         svg {
-          fill: var(--higlight-tint);
+          fill: ${props => props.theme.higlighttint};
         }
       }
 
@@ -121,7 +120,7 @@ const StyledLinks = styled.div`
         &:before {
           content: '0' counter(item) '.';
           margin-right: 5px;
-          color: var(--higlight);
+          color: ${props => props.theme.higlight};
           font-size: var(--fz-xxs);
           text-align: right;
         }
@@ -136,17 +135,11 @@ const StyledLinks = styled.div`
   }
 `;
 
-const Nav = ({ isHome }) => {
+const Nav = ({ isHome, changeTheme, isDark }) => {
   const [isMounted, setIsMounted] = useState(!isHome);
   const scrollDirection = useScrollDirection('down');
   const [scrolledToTop, setScrolledToTop] = useState(true);
   const prefersReducedMotion = usePrefersReducedMotion();
-  const { toggleDark, isDark } = useStyledDarkMode();
-
-  const switchMode = () => {
-    toggleDark();
-    //location.reload();
-  };
 
   const handleScroll = () => {
     setScrolledToTop(window.pageYOffset < 50);
@@ -188,8 +181,8 @@ const Nav = ({ isHome }) => {
   );
 
   const DarkMode = (
-    <button className="dark-mode" onClick={() => switchMode()}>
-      {isDark ? <IconSun /> : <IconMoon />}
+    <button className="dark-mode" onClick={() => changeTheme()}>
+      {isDark() ? <IconSun /> : <IconMoon />}
     </button>
   );
 
@@ -249,16 +242,6 @@ const Nav = ({ isHome }) => {
                 {isMounted && (
                   <CSSTransition classNames={fadeDownClass} timeout={timeout}>
                     <div style={{ transitionDelay: `${isHome ? navLinks.length * 100 : 0}ms` }}>
-                      {DarkMode}
-                    </div>
-                  </CSSTransition>
-                )}
-              </TransitionGroup>
-
-              <TransitionGroup component={null}>
-                {isMounted && (
-                  <CSSTransition classNames={fadeDownClass} timeout={timeout}>
-                    <div style={{ transitionDelay: `${isHome ? navLinks.length * 100 : 0}ms` }}>
                       {ResumeLink}
                     </div>
                   </CSSTransition>
@@ -289,6 +272,8 @@ const Nav = ({ isHome }) => {
 
 Nav.propTypes = {
   isHome: PropTypes.bool,
+  isDark: PropTypes.func,
+  changeTheme: PropTypes.func,
 };
 
 export default Nav;

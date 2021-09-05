@@ -1,23 +1,7 @@
 import { css } from 'styled-components';
 
-const colors = css`
-  --dark-navy: ${props => props.theme.darknavy};
-  --navy: ${props => props.theme.navy};
-  --light-navy: ${props => props.theme.lightnavy};
-  --lightest-navy: ${props => props.theme.lightestnavy};
-  --navy-shadow: ${props => props.theme.navyshadow};
-  --dark-slate: ${props => props.theme.darkslate};
-  --slate: ${props => props.theme.slate};
-  --light-slate: ${props => props.theme.lightslate};
-  --lightest-slate: ${props => props.theme.lightestslate};
-  --white: ${props => props.theme.white};
-  --higlight: ${props => props.theme.higlight};
-  --higlight-tint: ${props => props.theme.higlighttint};
-`;
-
 const variables = css`
   :root {
-    ${colors}
     --font-sans: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui,
       sans-serif;
     --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;

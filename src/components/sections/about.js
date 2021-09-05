@@ -39,7 +39,7 @@ const StyledText = styled.div`
         content: '▹';
         position: absolute;
         left: 0;
-        color: var(--higlight);
+        color: ${props => props.theme.higlight};
         font-size: var(--fz-sm);
         line-height: 12px;
       }
@@ -61,7 +61,7 @@ const StyledPic = styled.div`
     position: relative;
     width: 100%;
     border-radius: var(--border-radius);
-    background-color: var(--higlight);
+    background-color: ${props => props.theme.higlight};
 
     &:hover,
     &:focus {
@@ -101,12 +101,12 @@ const StyledPic = styled.div`
     &:before {
       top: 0;
       left: 0;
-      background-color: var(--navy);
+      background-color: ${props => props.theme.navy};
       mix-blend-mode: screen;
     }
 
     &:after {
-      border: 2px solid var(--higlight);
+      border: 2px solid ${props => props.theme.higlight};
       top: 20px;
       left: 20px;
       z-index: -1;

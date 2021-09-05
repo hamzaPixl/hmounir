@@ -30,7 +30,7 @@ const StyledPostContent = styled.div`
   p {
     margin: 1em 0;
     line-height: 1.5;
-    color: var(--light-slate);
+    color: ${props => props.theme.lightslate};
   }
 
   a {
