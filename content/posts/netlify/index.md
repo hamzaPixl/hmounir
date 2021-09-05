@@ -15,12 +15,12 @@ tags:
 
 ## Introduction
 
-Nowdays creating an html page is so easy or even a react app, how about publish them with some few click on this lovely mouse ?
-Integration become more and more the key of developement using tools helps you to move so fast on building your business. Focusing more on your productivity and let some part be managed by people who worked on it. Creating you react application is a thing going to production, be live with the website is another. With [Netlify](https://www.netlify.com/) you can literally deploy your website with peanut confihuration for any web app.
+Nowadays creating an HTML page is so easy or even a react app, how about publishing them with a few clicks on this lovely mouse?
+Integration becomes more and more the key to development using tools that helps you to move so fast on building your business. Focusing more on your productivity and let some part be managed by people who worked on it. Creating your react application is a thing going to production, we live with the website is another. With [Netlify](https://www.netlify.com/) you can deploy your website with peanut configuration for any web app.
 
-Were going to see here how this integration work and how you can be live easily with netlify. Some prerequirements for this, you will need to own an account on Github for the repository, and creating a free Netlify account for the deployment part. Yup you read it it's free. You can also attach it to your custom domain and be totaly transparent about the provider.
+Were going to see here how this integration work and how you can be live easily with Netlify. Some requirements for this, you will need to own an account on Github for the repository, and creating a free Netlify account for the deployment part. Yup, you read it it's free. You can also attach it to your custom domain and be transparent about the provider.
 
-## Creating repository
+## Creating a repository
 
 We are going to create a simple `react app` for that and push it to our `repository`.
 
@@ -40,7 +40,7 @@ cd netlify-test && git push
 
 ## Netlify account
 
-Now you need to create you netlify account for that you just have to follow the few steps that is on their website.
+Now you need to create your Netlify account for that you just have to follow the few steps that are on their website.
 
 ![Account](./account.png)
 
@@ -48,29 +48,29 @@ Once you got your account you have this overview and a button where you can add 
 
 ## Github Integration
 
-Here comes the integration part to you repository where you pushed your react app before. You can link it via the button `New site from Git` after that you just have to follow the steps and connect to you `github account` to graunt acces to it.
+Here comes the integration part to your repository where you pushed yours react app before. You can link it via the button `New site from Git` after that you just have to follow the steps and connect to your `Github account` to grant access to it.
 
 ![New](./newSite.png)
 
 ## Deployment
 
-To prepare the deployment you have to setup it on the last step of your github repository integration. To run our application we are going to serve the `build` and add the configuration to netlify.
+To prepare the deployment you have to set up it on the last step of your GitHub repository integration. To run our application we are going to serve the `build` and add the configuration to Netlify.
 
 ![Build](./build.png)
 
-You have of course some `logs`about the deploy to see if everythings runs fine.
+You have of course some `logs` about the deployment to see if everything runs fine.
 
 ![Deploy](./deploy.png)
 
 ## Custom domain
 
-You can chose to add a `custom domain` to your application, you can easily found that on the settings of the website.
+You can choose to add a `custom domain` to your application, you can easily found that on the settings of the website.
 
 ![Domain](./domain.png)
 
 ## Live to production
 
-Here it comes you have an `url` to go with it.
+Here it comes you have an `URL` to go with it.
 
 ![DoProdmain](./prod.png)
 

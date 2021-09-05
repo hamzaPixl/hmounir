@@ -15,9 +15,9 @@ tags:
 
 ## Introduction
 
-Data data data, you can store them use them as value and build great things from it. What if your data are not reliable anymore ? You business has one thing that need to be reliable : `data` that you store.
+Data data data, you can store them use them as value, and build great things from it. What if your data are not reliable anymore? Your business has one thing that needs to be reliable: the `data` that you store.
 
-You need to validate your input before using it. Were are going to see here how you can do it properply for a REST api. So you can imagine building a business that save claims and you want that some field are required, match a pattern, and more. You can validate everything so that your data that are comming to your application is reliable and with the format you want.
+You need to validate your input before using it. Where are going to see here how you can do it properly for a REST API. So you can imagine building a business that saves claims and you want that some fields are required, match a pattern and more. You can validate everything so that the data that are coming to your application is reliable and with the format you want.
 
 ## Dependencies
 
@@ -31,12 +31,12 @@ Install the dependencies:
 npm install express ajv body-parser
 ```
 
-We are going to use `ajv` for the validation part it self.
-For the REST api it self we are going to use `express` and add a simple route where we will attach the validation.
+We are going to use `ajv` for the validation part itself.
+For the REST API itself self we are going to use `express` and add a simple route where we will attach the validation.
 
 ## Server
 
-Lets create a simple server to add a route to it and use it for the entry of our validation.
+Let's create a simple server to add a route to it and use it for the entry of our validation.
 
 Add the `express` dependency and create the server instance.
 
@@ -64,7 +64,7 @@ app.listen(port, () => {
 
 ## Route
 
-Let's add a `POST` route were we are going to caputre to data we want to validate. And also respond with the validation errors or if its valid.
+Let's add a `POST` route where we are going to capture to data we want to validate. And also respond with the validation errors or if it's valid.
 
 ```javascript
 app.post('/', (req, res) => {
@@ -74,9 +74,9 @@ app.post('/', (req, res) => {
 });
 ```
 
-You can see that we take the `body` from the request wich we are going to use as input for validation.
+You can see that we take the `body` from the request which we are going to use as input for validation.
 
-We also have this function that we will detail later : `isValid`. After the validation we reponde with `It's valid` or not doepending on the case.
+We also have this function that we will detail later: `isValid`. After the validation, we respond with `It's valid` or not depending on the case.
 
 ## Validation
 
@@ -87,7 +87,7 @@ const Ajv = require('ajv');
 const ajv = new Ajv();
 ```
 
-For the validation we need to create what we call a `schema` where you define the validation on your payload.
+For the validation, we need to create what we call a `schema` where you define the validation on your payload.
 
 We are going to create a simple schema for a foo bar object type. Just to understand the mechanism.
 
@@ -105,14 +105,14 @@ const schema = {
 };
 ```
 
-So the object need to have only `2 properties` and no additional one.
+So the object needs to have only `2 properties` and no additional one.
 
 - Foo: will be an `integer` and will also be `required`.
 - Bar: will be a simple `string` and not required.
 
 ### Validate
 
-Lets implement the `isValid` function we talked about before. We are going to change a bit and add a `schema` as a parameter to validate the input we pass to it.
+Let's implement the `isValid` function we talked about before. We are going to change a bit and add a `schema` as a parameter to validate the input we pass to it.
 
 ```javascript
 function isValid(input, schema) {
@@ -151,7 +151,7 @@ Response :
 ]
 ```
 
-Here is an exmemple with a `valid` payload.
+Here is an example with a `valid` payload.
 
 ```curl
 curl --location --request POST 'http://localhost:3000/' \
@@ -172,11 +172,11 @@ Response :
 
 ## Middleware
 
-Developpers are lazy persons right ? We like automation we dont want to write this for all kind of `validation`. To repeat and isolate the process we are going to create a `middleware` that we could attach to any route to have a validation on early stage.
-To have scalable way to add schema validation we can separate here 3 things :
+Developers are lazy persons right? We like automation we don't want to write this for all kinds of `validation`. To repeat and isolate the process we are going to create a `middleware` that we could attach to any route to have a validation on early stage.
+To have a scalable way to add schema validation we can separate here 3 things :
 
 - The `middleware` for the validation only.
-- The `validator` that is generic for all schemas.
+- The `validator` is generic for all schemas.
 - The `schema` for the type of input.
 
 ```json
@@ -212,9 +212,9 @@ module.exports = {
 ```
 
 For the `middleware` we create a file for it `./middlewares/validator.js`.
-Here you pass the `schema` as a `parameter` that is used to do the validation of the `req.body`.
-If the validation fail we send a `404` error with a nice `code` and a `message` and the `details` of why it failed.
-When everyting went good it just pass to the next function. To read more about [middleware](http://expressjs.com/en/guide/using-middleware.html#using-middleware).
+Here you pass the `schema` as a `parameter` that is used to validate the `req.body`.
+If the validation fails we send a `404` error with a nice `code` and a `message` and the `details` of why it failed.
+When everything went good it just passes to the next function. To read more about [middleware](http://expressjs.com/en/guide/using-middleware.html#using-middleware).
 
 ```javascript
 const { isValid } = require('../utils/validator');
