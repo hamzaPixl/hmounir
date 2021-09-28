@@ -1,7 +1,7 @@
 ---
 title: Go to production with Netlify
 description: Deploy your first website with netlify in one click.
-date: 2021-04-21
+date: 2021-08-11
 draft: false
 slug: /pensieve/netlify
 tags:
