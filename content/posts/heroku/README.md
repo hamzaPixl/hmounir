@@ -70,7 +70,7 @@ Of course, you can define your custom domains. To have it on the URL and be 100%
 
 ## Deploy
 
-This section allows you to deploy any branch that you want manually. Here we chose the `mastertone because we only want to deploy the main branch. but imagine you have a `feature` branch you can too.
+This section allows you to deploy any branch that you want manually. Here we chose the `master` because we only want to deploy the main branch. but imagine you have a `feature` branch you can too.
 
 ![Manual Deploy](./manual.png)
 
