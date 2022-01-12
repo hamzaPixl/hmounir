@@ -102,7 +102,7 @@ Example :
 
 ## Source
 
-[Github](https://github.com/hamzaPixl/posts-heroku)
+[Github](https://github.com/hamzaPixl/blog-posts/tree/posts/heroku)
 
 [Blog](https://hmounir.com/pensieve/heroku)
 

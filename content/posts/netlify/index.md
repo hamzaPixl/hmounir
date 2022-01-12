@@ -76,7 +76,7 @@ Here it comes you have an `URL` to go with it.
 
 ## Source
 
-[Github](https://github.com/hamzaPixl/posts-netlify)
+[Github](https://github.com/hamzaPixl/blog-posts/tree/posts/netlify)
 
 ## License
 

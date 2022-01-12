@@ -255,7 +255,7 @@ module.exports = {
 
 ## Source
 
-[Github](https://github.com/hamzaPixl/posts-validation)
+[Github](https://github.com/hamzaPixl/blog-posts/tree/posts/validation)
 
 [Blog](https://hmounir.com/pensieve/validation)
 
