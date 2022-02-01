@@ -15,4 +15,6 @@ showInProjects: true
 featured: false
 ---
 
-Rcently i was using a lot of technology to test PWA application, here is a boilerplate version for nextjs. Containing some base code for some basic feature. It was also a good project to test `tailwindcss` framework. Sometimes when someone says that he takes a flight i like go an track where is this plane now, what is the estimated time, ... Here is a simple app to get theses informations. A flight tracker website.
+Sometimes when someone says that he takes a flight I like to go and track where is this plane now, what is the estimated time, ...
+Here is a simple app to get this information.
+A flight tracker website.

@@ -9,7 +9,7 @@ tags:
   - Javascript
   - Game
   - Netlify
-showInProjects: true
+showInProjects: false
 featured: false
 ---
 
