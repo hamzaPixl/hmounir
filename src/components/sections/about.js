@@ -140,8 +140,6 @@ const About = () => {
               millions of people and give a real added value. Turns out web development is really
               funny and you can imagine a lot of different ideas.
             </p>
-            My main focus these days is building insurance products and digital experiences at
-            Qover. But also spend a lot of time recently building a Muslim web app name Salat.
             <p>
               My main focus these days is building insurance products and digital experiences at{' '}
               <a href="https://qover.com/">Qover</a>. But also spend a lot of time recently building
