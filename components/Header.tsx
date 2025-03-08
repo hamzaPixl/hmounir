@@ -18,7 +18,9 @@ const Header: React.FC = () => {
   return (
     <motion.header
       className={`py-6 border-b sticky top-0 z-10 transition-all duration-300 ${
-        isAtTop ? 'bg-white border-transparent' : 'bg-white/95 backdrop-blur-sm border-gray-100 shadow-sm'
+        isAtTop
+          ? 'bg-white border-transparent'
+          : 'bg-white/95 backdrop-blur-sm border-gray-100 shadow-sm'
       }`}
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
@@ -28,7 +30,7 @@ const Header: React.FC = () => {
         <Link href="/" legacyBehavior>
           <motion.a
             className="text-2xl font-bold cursor-pointer"
-            onClick={(e) => handleNavClick(e, 'top')}
+            onClick={e => handleNavClick(e, 'top')}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -39,7 +41,7 @@ const Header: React.FC = () => {
           <Link href="#about" legacyBehavior>
             <motion.a
               className="nav-link"
-              onClick={(e) => handleNavClick(e, 'about')}
+              onClick={e => handleNavClick(e, 'about')}
               whileHover={{ scale: 1.1, color: '#5DD170' }}
               whileTap={{ scale: 0.95 }}
             >
@@ -49,7 +51,7 @@ const Header: React.FC = () => {
           <Link href="#skills" legacyBehavior>
             <motion.a
               className="nav-link"
-              onClick={(e) => handleNavClick(e, 'skills')}
+              onClick={e => handleNavClick(e, 'skills')}
               whileHover={{ scale: 1.1, color: '#5DD170' }}
               whileTap={{ scale: 0.95 }}
             >
@@ -59,7 +61,7 @@ const Header: React.FC = () => {
           <Link href="#experience" legacyBehavior>
             <motion.a
               className="nav-link"
-              onClick={(e) => handleNavClick(e, 'experience')}
+              onClick={e => handleNavClick(e, 'experience')}
               whileHover={{ scale: 1.1, color: '#5DD170' }}
               whileTap={{ scale: 0.95 }}
             >
@@ -69,7 +71,7 @@ const Header: React.FC = () => {
           <Link href="#education" legacyBehavior>
             <motion.a
               className="nav-link"
-              onClick={(e) => handleNavClick(e, 'education')}
+              onClick={e => handleNavClick(e, 'education')}
               whileHover={{ scale: 1.1, color: '#5DD170' }}
               whileTap={{ scale: 0.95 }}
             >
@@ -99,7 +101,7 @@ const Header: React.FC = () => {
                 transition={{ duration: 0.2 }}
               >
                 <div className="py-1">
-                  {languageOptions.map((lang) => (
+                  {languageOptions.map(lang => (
                     <button
                       key={lang.code}
                       onClick={() => {
@@ -107,7 +109,9 @@ const Header: React.FC = () => {
                         setIsLangMenuOpen(false);
                       }}
                       className={`flex items-center w-full px-4 py-2 text-sm cursor-pointer ${
-                        currentLanguage.code === lang.code ? 'bg-gray-100 text-primary' : 'text-gray-700'
+                        currentLanguage.code === lang.code
+                          ? 'bg-gray-100 text-primary'
+                          : 'text-gray-700'
                       } hover:bg-gray-100`}
                     >
                       <span className="text-xl mr-2">{lang.flag}</span>

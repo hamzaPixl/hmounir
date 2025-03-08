@@ -40,14 +40,17 @@ export const useScrollPosition = (throttleMs = 100) => {
    * @param sectionId ID de la section
    * @param options Options de défilement
    */
-  const scrollToSection = useCallback((sectionId: string, options: ScrollIntoViewOptions = { behavior: 'smooth' }) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView(options);
-      // Mettre à jour l'URL sans recharger la page
-      window.history.pushState({}, '', `#${sectionId}`);
-    }
-  }, []);
+  const scrollToSection = useCallback(
+    (sectionId: string, options: ScrollIntoViewOptions = { behavior: 'smooth' }) => {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView(options);
+        // Mettre à jour l'URL sans recharger la page
+        window.history.pushState({}, '', `#${sectionId}`);
+      }
+    },
+    []
+  );
 
   /**
    * Défile vers le haut de la page

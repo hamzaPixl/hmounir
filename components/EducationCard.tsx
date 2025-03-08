@@ -2,11 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import { EducationCardProps } from '../types';
 
-const EducationCard: React.FC<EducationCardProps> = ({
-  degree,
-  institution,
-  logoUrl
-}) => {
+const EducationCard: React.FC<EducationCardProps> = ({ degree, institution, logoUrl }) => {
   return (
     <div className="card">
       <div className="flex items-center mb-4">

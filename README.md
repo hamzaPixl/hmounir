@@ -67,12 +67,14 @@ hmounir-portfolio/
 ### Installation
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/hamzaPixl/hmounir.git
    cd hmounir
    ```
 
 2. Install dependencies:
+
    ```bash
    npm install
    # or
@@ -80,16 +82,19 @@ hmounir-portfolio/
    ```
 
 3. Create environment files:
+
    ```bash
    cp .env.example .env
    cp .env.local.example .env.local
    ```
 
 4. Update the environment variables in `.env` and `.env.local` with your values:
+
    - `NEXT_PUBLIC_GA_ID`: Google Analytics measurement ID
    - `NEXT_PUBLIC_SITE_URL`: Your website URL
 
 5. Start the development server:
+
    ```bash
    npm run dev
    # or
@@ -114,6 +119,7 @@ hmounir-portfolio/
 ## 🌐 Internationalization
 
 The site supports three languages:
+
 - 🇬🇧 English (default)
 - 🇫🇷 French
 - 🇳🇱 Dutch
@@ -123,6 +129,7 @@ Translation files are located in `public/locales/{lang}/common.json`.
 ## 📱 Responsive Design
 
 The site is fully responsive with breakpoints:
+
 - Mobile: < 768px
 - Tablet: 768px - 1024px
 - Desktop: > 1024px
@@ -139,6 +146,7 @@ The site is fully responsive with breakpoints:
 ## 🚀 Deployment
 
 The site can be deployed to:
+
 - [Vercel](https://vercel.com/) (recommended)
 - [Netlify](https://www.netlify.com/)
 - Any platform supporting Next.js
@@ -158,6 +166,7 @@ This project is licensed under the ISC License.
 ## 👤 Author
 
 **Hamza Mounir**
+
 - Website: [pixldev.be](https://www.pixldev.be)
 - GitHub: [@hamzaPixl](https://github.com/hamzaPixl)
 - LinkedIn: [Hamza Mounir](https://www.linkedin.com/in/hamza-mounir-0a7bb6139/)

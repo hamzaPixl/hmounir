@@ -28,27 +28,59 @@ class MyDocument extends Document {
 
           {/* Meta tags for SEO */}
           <meta name="theme-color" content="#5DD170" />
-          <meta name="description" content="Hamza Mounir - Senior Software Engineer specializing in scalable systems, cloud & microservices, and business-critical solutions." />
-          <meta name="keywords" content="software engineer, developer, cloud, microservices, scalable systems, TypeScript, JavaScript, NestJS" />
+          <meta
+            name="description"
+            content="Hamza Mounir - Senior Software Engineer specializing in scalable systems, cloud & microservices, and business-critical solutions."
+          />
+          <meta
+            name="keywords"
+            content="software engineer, developer, cloud, microservices, scalable systems, TypeScript, JavaScript, NestJS"
+          />
           <meta name="author" content="Hamza Mounir" />
           <meta property="og:type" content="website" />
           <meta property="og:title" content="Hamza Mounir | Senior Software Engineer" />
-          <meta property="og:description" content="Senior Software Engineer specializing in scalable systems, cloud & microservices, and business-critical solutions." />
+          <meta
+            property="og:description"
+            content="Senior Software Engineer specializing in scalable systems, cloud & microservices, and business-critical solutions."
+          />
           <meta property="og:site_name" content="Hamza Mounir Portfolio" />
           <meta property="twitter:card" content="summary_large_image" />
           <meta property="twitter:title" content="Hamza Mounir | Senior Software Engineer" />
-          <meta property="twitter:description" content="Senior Software Engineer specializing in scalable systems, cloud & microservices, and business-critical solutions." />
+          <meta
+            property="twitter:description"
+            content="Senior Software Engineer specializing in scalable systems, cloud & microservices, and business-critical solutions."
+          />
 
           {/* Favicon */}
           <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-touch-icon-57x57.png" />
           <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-touch-icon-60x60.png" />
           <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-touch-icon-72x72.png" />
           <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-touch-icon-76x76.png" />
-          <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-touch-icon-114x114.png" />
-          <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-touch-icon-120x120.png" />
-          <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-touch-icon-144x144.png" />
-          <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-touch-icon-152x152.png" />
-          <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon-180x180.png" />
+          <link
+            rel="apple-touch-icon"
+            sizes="114x114"
+            href="/favicon/apple-touch-icon-114x114.png"
+          />
+          <link
+            rel="apple-touch-icon"
+            sizes="120x120"
+            href="/favicon/apple-touch-icon-120x120.png"
+          />
+          <link
+            rel="apple-touch-icon"
+            sizes="144x144"
+            href="/favicon/apple-touch-icon-144x144.png"
+          />
+          <link
+            rel="apple-touch-icon"
+            sizes="152x152"
+            href="/favicon/apple-touch-icon-152x152.png"
+          />
+          <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/favicon/apple-touch-icon-180x180.png"
+          />
           <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
           <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
           <link rel="manifest" href="/manifest.json" />

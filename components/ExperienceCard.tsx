@@ -8,7 +8,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
   period,
   description,
   achievements,
-  logoUrl
+  logoUrl,
 }) => {
   return (
     <div className="card mb-8">
@@ -31,9 +31,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
           </div>
         </div>
         <div className="mt-2 md:mt-0">
-          <span className="bg-gray-100 px-3 py-1 rounded-full text-sm font-medium">
-            {period}
-          </span>
+          <span className="bg-gray-100 px-3 py-1 rounded-full text-sm font-medium">{period}</span>
         </div>
       </div>
       <p className="text-gray-700 mb-4">{description}</p>
@@ -41,7 +39,9 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
         <div>
           <ul className="list-disc pl-5 space-y-1">
             {achievements.map((achievement, index) => (
-              <li key={index} className="text-gray-700">{achievement}</li>
+              <li key={index} className="text-gray-700">
+                {achievement}
+              </li>
             ))}
           </ul>
         </div>

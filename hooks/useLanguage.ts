@@ -29,9 +29,12 @@ export const useLanguage = () => {
    * Change la langue de l'application
    * @param newLocale Code de la nouvelle langue
    */
-  const changeLanguage = useCallback((newLocale: string) => {
-    router.push({ pathname, query }, asPath, { locale: newLocale });
-  }, [router, pathname, asPath, query]);
+  const changeLanguage = useCallback(
+    (newLocale: string) => {
+      router.push({ pathname, query }, asPath, { locale: newLocale });
+    },
+    [router, pathname, asPath, query]
+  );
 
   return {
     currentLanguage,

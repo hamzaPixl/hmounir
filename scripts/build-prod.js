@@ -23,7 +23,9 @@ const colors = {
   magenta: '\x1b[35m',
 };
 
-console.log(`${colors.bright}${colors.blue}🚀 Starting production build process...${colors.reset}\n`);
+console.log(
+  `${colors.bright}${colors.blue}🚀 Starting production build process...${colors.reset}\n`
+);
 
 // Step 1: Generate OG images
 console.log(`${colors.yellow}📸 Generating social media images...${colors.reset}`);
@@ -59,5 +61,9 @@ if (fs.existsSync(path.join(process.cwd(), '.next'))) {
   process.exit(1);
 }
 
-console.log(`${colors.bright}${colors.magenta}🎉 Production build completed successfully!${colors.reset}`);
-console.log(`${colors.bright}${colors.blue}🚀 Run 'npm start' to start the production server.${colors.reset}`);
+console.log(
+  `${colors.bright}${colors.magenta}🎉 Production build completed successfully!${colors.reset}`
+);
+console.log(
+  `${colors.bright}${colors.blue}🚀 Run 'npm start' to start the production server.${colors.reset}`
+);

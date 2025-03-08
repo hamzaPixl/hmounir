@@ -2,9 +2,10 @@
 const { i18n } = require('./next-i18next.config');
 
 // Initialize bundle analyzer only when needed
-const withBundleAnalyzer = process.env.ANALYZE === 'true'
-  ? require('@next/bundle-analyzer')({ enabled: true })
-  : (config) => config;
+const withBundleAnalyzer =
+  process.env.ANALYZE === 'true'
+    ? require('@next/bundle-analyzer')({ enabled: true })
+    : config => config;
 
 const nextConfig = {
   reactStrictMode: true,
@@ -23,7 +24,7 @@ const nextConfig = {
         hostname: 'media.licdn.com',
         port: '',
         pathname: '/dms/**',
-      }
+      },
     ],
   },
   compiler: {
@@ -51,6 +52,6 @@ const nextConfig = {
 
     return config;
   },
-}
+};
 
 module.exports = withBundleAnalyzer(nextConfig);

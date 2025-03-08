@@ -31,7 +31,7 @@ const NotFound: React.FC = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.5 }}
         >
-          The page you're looking for doesn't exist.
+          The page you&apos;re looking for doesn&apos;t exist.
         </motion.p>
         <motion.div
           initial={{ opacity: 0 }}
