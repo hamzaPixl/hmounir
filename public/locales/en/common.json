@@ -1,0 +1,63 @@
+{
+  "header.about": "About",
+  "header.skills": "Skills",
+  "header.experience": "Experience",
+  "header.education": "Education",
+  "header.downloadCV": "Download CV",
+
+  "hero.title": "Senior Software Engineer | Scalable Systems | Cloud & Microservices | Business-Critical Solutions",
+  "hero.contactMe": "Contact Me",
+
+  "about.title": "About Me",
+  "about.paragraph1": "Senior Software Engineer with a strong background in scalable architecture, process optimization, and cloud-based system development. Experienced in building and scaling platforms from startup to enterprise, ensuring systems are automated, efficient, and adaptable.",
+  "about.paragraph2": "I specialize in high-growth environments, where I build robust software, improve engineering workflows, mentor teams, and push for best practices. My focus is on creating scalable, self-managed platforms that reduce operational friction and support business growth.",
+
+  "skills.title": "Technical Skills",
+  "skills.softwareArchitecture": "Software Architecture & Development",
+  "skills.businessCritical": "Business-Critical Systems",
+  "skills.leadership": "Leadership & Team Growth",
+  "skills.keyStrengths": "Key Strengths",
+
+  "experience.title": "Professional Experience",
+  "experience.greenomy.title": "Senior Software Engineer",
+  "experience.greenomy.period": "Dec 2023 - Present",
+  "experience.greenomy.description": "At Greenomy, I focus on building a scalable SaaS platform while improving engineering workflows to help the team work more efficiently.",
+  "experience.greenomy.achievement1": "Automated CI/CD processes, improving deployment speed and reliability.",
+  "experience.greenomy.achievement2": "Introduced better development workflows, monitoring tools, and debugging strategies.",
+  "experience.greenomy.achievement3": "Mentored engineers, reducing friction in problem-solving and improving overall productivity.",
+
+  "experience.qover.title": "Senior Software Engineer",
+  "experience.qover.period": "2017 - 2023",
+  "experience.qover.description": "I was part of the early technical team at Qover, helping transform it from a 13-person startup to a 150+ employee scale-up.",
+  "experience.qover.achievement1": "Built authentication, third-party integrations, pricing models, and claims automation systems.",
+  "experience.qover.achievement2": "Developed whitelabel insurance solutions for easy partner onboarding and scaling.",
+  "experience.qover.achievement3": "Created contract automation, bordereau generation, and financial reconciliation workflows.",
+
+  "experience.pixldev.title": "Founder",
+  "experience.pixldev.period": "Ongoing",
+  "experience.pixldev.description": "At Pixl Srl, I focus on developing digital solutions that bridge technology and business needs.",
+  "experience.pixldev.achievement1": "Building tailored software solutions that address specific business challenges.",
+  "experience.pixldev.achievement2": "Creating AI-driven environments to automate processes and improve efficiency.",
+  "experience.pixldev.achievement3": "Developing structured digital strategies for companies scaling with technology.",
+
+  "experience.emakina.title": "Internship",
+  "experience.emakina.period": "2017",
+  "experience.emakina.description": "Developed a digital signage platform for real-time content display across multiple screens.",
+  "experience.emakina.achievement1": "Integrated live data feeds (weather, schedules, news updates, etc.).",
+  "experience.emakina.achievement2": "Optimized secure authentication and data access processes.",
+  "experience.emakina.achievement3": "Implemented real-time content synchronization across displays.",
+
+  "education.title": "Education",
+  "education.degree": "Bachelor in Computer Science",
+  "education.institution": "Institut Paul Lambin",
+
+  "contact.title": "Get In Touch",
+  "contact.description": "I'm always open to discussing new projects, opportunities, or partnerships. Feel free to reach out!",
+  "contact.form.title": "Send a Message",
+  "contact.form.name": "Name",
+  "contact.form.email": "Email",
+  "contact.form.message": "Message",
+  "contact.form.send": "Send Message",
+
+  "footer.rights": "All rights reserved."
+}

@@ -1,0 +1,63 @@
+{
+  "header.about": "À propos",
+  "header.skills": "Compétences",
+  "header.experience": "Expérience",
+  "header.education": "Formation",
+  "header.downloadCV": "Télécharger CV",
+
+  "hero.title": "Senior Software engineer | Systèmes Évolutifs | Cloud & Microservices | Solutions Critiques",
+  "hero.contactMe": "Me contacter",
+
+  "about.title": "À propos de moi",
+  "about.paragraph1": "Senior Software engineer avec une solide expérience en architecture évolutive, optimisation des processus et développement de systèmes cloud. Expérimenté dans la construction et la mise à l'échelle de plateformes, du démarrage à l'entreprise, garantissant que les systèmes sont automatisés, efficaces et adaptables.",
+  "about.paragraph2": "Je me spécialise dans les environnements à forte croissance, où je construis des logiciels robustes, améliore les flux de travail d'ingénierie, encadre les équipes et pousse pour les meilleures pratiques. Mon objectif est de créer des plateformes évolutives et autogérées qui réduisent les frictions opérationnelles et soutiennent la croissance de l'entreprise.",
+
+  "skills.title": "Compétences Techniques",
+  "skills.softwareArchitecture": "Architecture & Développement Logiciel",
+  "skills.businessCritical": "Systèmes Critiques d'Entreprise",
+  "skills.leadership": "Leadership & Croissance d'Équipe",
+  "skills.keyStrengths": "Points Forts",
+
+  "experience.title": "Expérience Professionnelle",
+  "experience.greenomy.title": "Senior Software engineer",
+  "experience.greenomy.period": "Déc 2023 - Présent",
+  "experience.greenomy.description": "Chez Greenomy, je me concentre sur la construction d'une plateforme SaaS évolutive tout en améliorant les flux de travail d'ingénierie pour aider l'équipe à travailler plus efficacement.",
+  "experience.greenomy.achievement1": "Automatisation des processus CI/CD, améliorant la vitesse et la fiabilité des déploiements.",
+  "experience.greenomy.achievement2": "Introduction de meilleurs flux de travail de développement, d'outils de surveillance et de stratégies de débogage.",
+  "experience.greenomy.achievement3": "Mentorat d'ingénieurs, réduisant les frictions dans la résolution de problèmes et améliorant la productivité globale.",
+
+  "experience.qover.title": "Senior Software engineer",
+  "experience.qover.period": "2017 - 2023",
+  "experience.qover.description": "J'ai fait partie de l'équipe technique initiale de Qover, aidant à la transformer d'une startup de 13 personnes à une scale-up de plus de 150 employés.",
+  "experience.qover.achievement1": "Construction de systèmes d'authentification, d'intégrations tierces, de modèles de tarification et d'automatisation des réclamations.",
+  "experience.qover.achievement2": "Développement de solutions d'assurance en marque blanche pour faciliter l'intégration et le lancement de nouveaux partenaires.",
+  "experience.qover.achievement3": "Création d'automatisation de contrats, de génération de bordereaux et de réconciliation financière.",
+
+  "experience.pixldev.title": "Fondateur",
+  "experience.pixldev.period": "En cours",
+  "experience.pixldev.description": "Chez Pixl Srl, je me concentre sur le développement de solutions numériques qui font le pont entre la technologie et les besoins des entreprises.",
+  "experience.pixldev.achievement1": "Construction de solutions logicielles sur mesure qui répondent à des défis commerciaux spécifiques.",
+  "experience.pixldev.achievement2": "Création d'environnements basés sur l'IA pour automatiser les processus et améliorer l'efficacité.",
+  "experience.pixldev.achievement3": "Développement de stratégies numériques structurées pour les entreprises en croissance.",
+
+  "experience.emakina.title": "Stage",
+  "experience.emakina.period": "2017",
+  "experience.emakina.description": "Développement d'une plateforme d'affichage numérique pour l'affichage de contenu en temps réel sur plusieurs écrans.",
+  "experience.emakina.achievement1": "Intégration de flux de données en direct (météo, horaires, actualités, etc.).",
+  "experience.emakina.achievement2": "Optimisation des processus d'authentification sécurisée et d'accès aux données.",
+  "experience.emakina.achievement3": "Implémentation de la synchronisation de contenu en temps réel entre les écrans.",
+
+  "education.title": "Formation",
+  "education.degree": "Licence en Informatique",
+  "education.institution": "Institut Paul Lambin",
+
+  "contact.title": "Contactez-moi",
+  "contact.description": "Je suis toujours ouvert à discuter de nouveaux projets, opportunités ou partenariats. N'hésitez pas à me contacter !",
+  "contact.form.title": "Envoyer un message",
+  "contact.form.name": "Nom",
+  "contact.form.email": "Email",
+  "contact.form.message": "Message",
+  "contact.form.send": "Envoyer le message",
+
+  "footer.rights": "Tous droits réservés."
+}

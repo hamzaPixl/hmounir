@@ -1,0 +1,55 @@
+{
+  "name": "hmounir-portfolio",
+  "version": "1.0.0",
+  "description": "Hamza Mounir's Portfolio",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "build:prod": "node scripts/build-prod.js",
+    "start": "next start",
+    "lint": "eslint . --ext .ts,.tsx",
+    "format": "prettier --write .",
+    "type-check": "tsc --noEmit",
+    "generate-og": "node scripts/generate-og-image.js",
+    "prebuild": "npm run generate-og",
+    "analyze": "ANALYZE=true next build",
+    "clean": "rm -rf .next && rm -rf node_modules/.cache && echo 'Cache cleared successfully!'",
+    "dev:clean": "npm run clean && npm run dev",
+    "troubleshoot": "node scripts/troubleshoot.js"
+  },
+  "keywords": [
+    "portfolio",
+    "resume",
+    "nextjs"
+  ],
+  "author": "Hamza Mounir",
+  "license": "ISC",
+  "dependencies": {
+    "@heroicons/react": "^2.0.18",
+    "autoprefixer": "^10.4.14",
+    "critters": "^0.0.23",
+    "framer-motion": "^10.12.16",
+    "next": "^15.2.1",
+    "next-i18next": "^14.0.0",
+    "postcss": "^8.4.24",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-i18next": "^13.0.2",
+    "tailwindcss": "^3.3.2"
+  },
+  "devDependencies": {
+    "@next/bundle-analyzer": "^13.4.4",
+    "@types/node": "^20.2.5",
+    "@types/react": "^18.2.8",
+    "@types/react-dom": "^18.2.4",
+    "@typescript-eslint/eslint-plugin": "^5.59.9",
+    "@typescript-eslint/parser": "^5.59.9",
+    "eslint": "^8.42.0",
+    "eslint-config-next": "^13.4.4",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.8",
+    "typescript": "^5.1.3"
+  }
+}

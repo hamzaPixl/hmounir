@@ -1,0 +1,63 @@
+{
+  "header.about": "Over mij",
+  "header.skills": "Vaardigheden",
+  "header.experience": "Ervaring",
+  "header.education": "Opleiding",
+  "header.downloadCV": "CV downloaden",
+
+  "hero.title": "Senior Software Engineer | Schaalbare Systemen | Cloud & Microservices | Bedrijfskritische Oplossingen",
+  "hero.contactMe": "Neem contact op",
+
+  "about.title": "Over mij",
+  "about.paragraph1": "Senior Software Engineer met een sterke achtergrond in schaalbare architectuur, procesoptimalisatie en cloud-gebaseerde systeemontwikkeling. Ervaren in het bouwen en schalen van platforms van startup tot onderneming, waarbij systemen geautomatiseerd, efficiënt en aanpasbaar zijn.",
+  "about.paragraph2": "Ik ben gespecialiseerd in omgevingen met hoge groei, waar ik robuuste software bouw, engineeringworkflows verbeter, teams begeleid en best practices stimuleer. Mijn focus ligt op het creëren van schaalbare, zelfbeheerde platforms die operationele wrijving verminderen en bedrijfsgroei ondersteunen.",
+
+  "skills.title": "Technische Vaardigheden",
+  "skills.softwareArchitecture": "Software Architectuur & Ontwikkeling",
+  "skills.businessCritical": "Bedrijfskritische Systemen",
+  "skills.leadership": "Leiderschap & Teamgroei",
+  "skills.keyStrengths": "Kernkwaliteiten",
+
+  "experience.title": "Professionele Ervaring",
+  "experience.greenomy.title": "Senior Software Engineer",
+  "experience.greenomy.period": "Dec 2023 - Heden",
+  "experience.greenomy.description": "Bij Greenomy focus ik op het bouwen van een schaalbaar SaaS-platform en het verbeteren van engineeringworkflows om het team efficiënter te laten werken.",
+  "experience.greenomy.achievement1": "Geautomatiseerde CI/CD-processen, waardoor de snelheid en betrouwbaarheid van implementaties verbeterd zijn.",
+  "experience.greenomy.achievement2": "Introductie van betere ontwikkelingsworkflows, monitoringtools en debuggingstrategieën.",
+  "experience.greenomy.achievement3": "Begeleiding van engineers, waardoor wrijving bij probleemoplossing verminderd is en de algehele productiviteit verbeterd is.",
+
+  "experience.qover.title": "Senior Software Engineer",
+  "experience.qover.period": "2017 - 2023",
+  "experience.qover.description": "Ik maakte deel uit van het vroege technische team bij Qover, en hielp het transformeren van een startup met 13 personen naar een scale-up met meer dan 150 medewerkers.",
+  "experience.qover.achievement1": "Bouw van authenticatie, integraties met derden, prijsmodellen en automatisering van claims.",
+  "experience.qover.achievement2": "Ontwikkeling van whitelabel verzekeringsoplossingen voor eenvoudige partnerintegratie en -lancering.",
+  "experience.qover.achievement3": "Creatie van contractautomatisering, bordereaugeneratie en financiële reconciliatie.",
+
+  "experience.pixldev.title": "Oprichter",
+  "experience.pixldev.period": "Lopend",
+  "experience.pixldev.description": "Bij Pixl Srl focus ik op het ontwikkelen van digitale oplossingen die technologie en zakelijke behoeften overbruggen.",
+  "experience.pixldev.achievement1": "Bouwen van op maat gemaakte softwareoplossingen voor specifieke zakelijke uitdagingen.",
+  "experience.pixldev.achievement2": "Creëren van AI-gestuurde omgevingen voor procesautomatisering en efficiëntieverbetering.",
+  "experience.pixldev.achievement3": "Ontwikkelen van gestructureerde digitale strategieën voor groeiende bedrijven.",
+
+  "experience.emakina.title": "Stage",
+  "experience.emakina.period": "2017",
+  "experience.emakina.description": "Ontwikkeling van een digital signage platform voor real-time contentweergave op meerdere schermen.",
+  "experience.emakina.achievement1": "Integratie van live datafeeds (weer, schema's, nieuwsupdates, etc.).",
+  "experience.emakina.achievement2": "Optimalisatie van beveiligde authenticatie- en datatoegangsprocessen.",
+  "experience.emakina.achievement3": "Implementatie van real-time contentsynchronisatie tussen schermen.",
+
+  "education.title": "Opleiding",
+  "education.degree": "Bachelor in Informatica",
+  "education.institution": "Institut Paul Lambin",
+
+  "contact.title": "Neem contact op",
+  "contact.description": "Ik sta altijd open voor het bespreken van nieuwe projecten, kansen of partnerschappen. Neem gerust contact op!",
+  "contact.form.title": "Stuur een bericht",
+  "contact.form.name": "Naam",
+  "contact.form.email": "E-mail",
+  "contact.form.message": "Bericht",
+  "contact.form.send": "Bericht versturen",
+
+  "footer.rights": "Alle rechten voorbehouden."
+}
