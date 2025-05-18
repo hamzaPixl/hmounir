@@ -1,34 +1,76 @@
-import dynamic from 'next/dynamic';
 import Head from 'next/head';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
-const Confetti = dynamic(() => import('react-confetti'), { ssr: false });
-
-const GITHUB_README_URL = 'https://raw.githubusercontent.com/hamzaPixl/dev-tools/master/README.md';
+const directories = [
+  {
+    name: 'VS Code',
+    icon: '🖥️',
+    desc: 'Editor settings, themes, and extensions',
+    url: 'https://github.com/hamzaPixl/dev-tools/tree/master/vs-code',
+  },
+  {
+    name: 'Git',
+    icon: '🔀',
+    desc: 'Aliases, hooks, and CI/CD workflows',
+    url: 'https://github.com/hamzaPixl/dev-tools/tree/master/git',
+  },
+  {
+    name: 'Docker',
+    icon: '🐳',
+    desc: 'Compose files for databases, apps, and more',
+    url: 'https://github.com/hamzaPixl/dev-tools/tree/master/docker',
+  },
+  {
+    name: 'Shell',
+    icon: '💻',
+    desc: 'Zsh/Bash profiles, aliases, CLI tools',
+    url: 'https://github.com/hamzaPixl/dev-tools/tree/master/shell',
+  },
+  {
+    name: 'ESLint Frontend',
+    icon: '🎨',
+    desc: 'Lint config for Next.js, React, Tailwind',
+    url: 'https://github.com/hamzaPixl/dev-tools/tree/master/eslint-frontend',
+  },
+  {
+    name: 'ESLint Backend',
+    icon: '🛠️',
+    desc: 'Lint config for Node.js, TypeScript backend',
+    url: 'https://github.com/hamzaPixl/dev-tools/tree/master/eslint-backend',
+  },
+  {
+    name: 'Prettier Frontend',
+    icon: '✨',
+    desc: 'Prettier config for frontend projects',
+    url: 'https://github.com/hamzaPixl/dev-tools/tree/master/prettier-frontend',
+  },
+  {
+    name: 'Prettier Backend',
+    icon: '✨',
+    desc: 'Prettier config for backend projects',
+    url: 'https://github.com/hamzaPixl/dev-tools/tree/master/prettier-backend',
+  },
+  {
+    name: 'EditorConfig',
+    icon: '📝',
+    desc: 'Universal code style for all editors',
+    url: 'https://github.com/hamzaPixl/dev-tools/tree/master/editorconfig',
+  },
+  {
+    name: 'AI Prompts',
+    icon: '🤖',
+    desc: 'Prompt library for code, docs, and scaffolding',
+    url: 'https://github.com/hamzaPixl/dev-tools/tree/master/ai',
+  },
+  {
+    name: 'DevOps',
+    icon: '☸️',
+    desc: 'Kubernetes, Terraform, GitOps, scripts, and more',
+    url: 'https://github.com/hamzaPixl/dev-tools/tree/master/devops',
+  },
+];
 
 const DevEasterEgg: React.FC = () => {
-  const [readme, setReadme] = useState('');
-  const [showConfetti, setShowConfetti] = useState(true);
-  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
-
-  useEffect(() => {
-    fetch(GITHUB_README_URL)
-      .then(res => res.text())
-      .then(setReadme);
-    setShowConfetti(true);
-    const timer = setTimeout(() => setShowConfetti(false), 4000);
-    return () => clearTimeout(timer);
-  }, []);
-
-  useEffect(() => {
-    function handleResize() {
-      setDimensions({ width: window.innerWidth, height: window.innerHeight });
-    }
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
   return (
     <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center p-4">
       <Head>
@@ -36,25 +78,32 @@ const DevEasterEgg: React.FC = () => {
         <meta name="robots" content="noindex" />
         <meta name="description" content="Hidden dev tools and resources by Hamza Mounir." />
       </Head>
-      {showConfetti && dimensions.width > 0 && (
-        <Confetti width={dimensions.width} height={dimensions.height} />
-      )}
-      <h1 className="text-3xl md:text-5xl font-bold mb-4">🛠️ Welcome, Dev!</h1>
-      <p className="mb-6 text-lg text-gray-300 text-center max-w-xl">
-        You found the hidden dev page! Here’s my{' '}
+      <h1 className="text-3xl md:text-5xl font-bold mb-8">🛠️ Welcome, Dev!</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full max-w-5xl">
+        {directories.map(dir => (
+          <button
+            key={dir.name}
+            onClick={() => window.open(dir.url, '_blank', 'noopener,noreferrer')}
+            className="bg-gray-900 hover:bg-primary/80 transition-colors rounded-xl shadow-lg p-6 flex flex-col items-center cursor-pointer border border-gray-800 hover:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
+            aria-label={`Open ${dir.name} on GitHub`}
+          >
+            <span className="text-4xl mb-2">{dir.icon}</span>
+            <span className="text-xl font-semibold mb-1">{dir.name}</span>
+            <span className="text-gray-300 text-center text-sm">{dir.desc}</span>
+          </button>
+        ))}
+      </div>
+      <p className="mt-10 text-gray-400 text-center text-sm max-w-xl">
+        All resources are open source and ready to use. <br />
         <a
           href="https://github.com/hamzaPixl/dev-tools"
           target="_blank"
           rel="noopener noreferrer"
           className="underline text-primary"
         >
-          GitHub Dev Tools
-        </a>{' '}
-        resource. The README is loaded live below:
+          View the full repository on GitHub
+        </a>
       </p>
-      <div className="w-full max-w-3xl bg-gray-900 rounded-lg shadow-lg p-6 overflow-auto prose prose-invert">
-        <pre style={{ whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}>{readme}</pre>
-      </div>
     </div>
   );
 };

@@ -48,8 +48,7 @@ const Home: React.FC = () => {
   const { t } = useTranslate();
   const { scrollToSection } = useScrollPosition();
   const router = useRouter();
-  const [profileClickCount, setProfileClickCount] = React.useState(0);
-
+  const [, setProfileClickCount] = React.useState(0);
   return (
     <div className="min-h-screen flex flex-col">
       <SEO />
