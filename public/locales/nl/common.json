@@ -9,8 +9,10 @@
   "hero.contactMe": "Neem contact op",
 
   "about.title": "Over mij",
-  "about.paragraph1": "Senior Software Engineer met een sterke achtergrond in schaalbare architectuur, procesoptimalisatie en cloud-gebaseerde systeemontwikkeling. Ervaren in het bouwen en schalen van platforms van startup tot onderneming, waarbij systemen geautomatiseerd, efficiënt en aanpasbaar zijn.",
-  "about.paragraph2": "Ik ben gespecialiseerd in omgevingen met hoge groei, waar ik robuuste software bouw, engineeringworkflows verbeter, teams begeleid en best practices stimuleer. Mijn focus ligt op het creëren van schaalbare, zelfbeheerde platforms die operationele wrijving verminderen en bedrijfsgroei ondersteunen.",
+  "about.paragraph1": "Ik ben een Senior Software Engineer met een sterke achtergrond in schaalbare architectuur, procesoptimalisatie en cloudgebaseerde systeemontwikkeling. Ik blink uit in het bouwen en opschalen van platforms van startup tot enterprise, waarbij systemen geautomatiseerd, efficiënt en eenvoudig te beheren zijn.",
+  "about.paragraph2": "Op het gebied van frontend lever ik moderne, responsieve en toegankelijke gebruikerservaringen met React, Next.js en geavanceerde UI-frameworks, met focus op performance, gebruiksvriendelijkheid en naadloze integratie met backend- en AI-gedreven services.",
+  "about.paragraph3": "Ik heb praktische ervaring met het ontwerpen en implementeren van AI-gedreven tools, waaronder contextbewuste systemen, prompt engineering, tokenoptimalisatie en streaming LLM-antwoorden. Ik maak gebruik van vectordatabases, retrieval-augmented generation en model-finetuning om intelligente, productieklare oplossingen te bouwen.",
+  "about.paragraph4": "Ik gedij in snelgroeiende omgevingen, waar ik niet alleen betrouwbare software bouw, maar ook engineeringworkflows verbeter, teams begeleid en best practices stimuleer. Mijn doel is om zeer schaalbare, zelfbeherende platforms te creëren die operationele frictie verminderen en bedrijven laten groeien zonder technische knelpunten.",
 
   "skills.title": "Technische Vaardigheden",
   "skills.softwareArchitecture": "Software Architectuur & Ontwikkeling",
@@ -19,6 +21,14 @@
   "skills.keyStrengths": "Kernkwaliteiten",
 
   "experience.title": "Professionele Ervaring",
+
+  "experience.cohabs.title": "Senior Software Engineer",
+  "experience.cohabs.period": "April 2025 - Juni 2025",
+  "experience.cohabs.description": "Bij Cohabs richt ik me op het bouwen van een schaalbare betaaldienst om alle edge cases te dekken en het team efficiënter te laten werken. Het belangrijkste is het spiegelen van transacties naar het financiële hulpmiddel dat wordt gebruikt door de financiële afdeling, boekhouding en betalingsconsolidatie.",
+  "experience.cohabs.achievement1": "Integratie van externe API’s voor communicatie met het boekhoudsysteem.",
+  "experience.cohabs.achievement2": "Verbetering van workflows bij gebeurtenissen met foutafhandeling en wachtrijverwerking.",
+  "experience.cohabs.achievement3": "Beheer van migraties tussen groeiende diensten en veranderingen.",
+
   "experience.greenomy.title": "Senior Software Engineer",
   "experience.greenomy.period": "Dec 2023 - Heden",
   "experience.greenomy.description": "Bij Greenomy focus ik op het bouwen van een schaalbaar SaaS-platform en het verbeteren van engineeringworkflows om het team efficiënter te laten werken.",

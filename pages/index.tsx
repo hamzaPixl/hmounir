@@ -218,6 +218,12 @@ const Home: React.FC = () => {
             <motion.p className="text-lg" variants={fadeInUp}>
               {t('about.paragraph2')}
             </motion.p>
+            <motion.p className="text-lg" variants={fadeInUp}>
+              {t('about.paragraph3')}
+            </motion.p>
+            <motion.p className="text-lg" variants={fadeInUp}>
+              {t('about.paragraph4')}
+            </motion.p>
           </motion.div>
         </Section>
 
@@ -340,6 +346,20 @@ const Home: React.FC = () => {
             viewport={{ once: true, margin: '-100px' }}
             variants={staggerContainer}
           >
+            <motion.div variants={fadeInUp}>
+              <ExperienceCard
+                title={t('experience.cohabs.title')}
+                company="Cohabs"
+                period={t('experience.cohabs.period')}
+                description={t('experience.cohabs.description')}
+                achievements={[
+                  t('experience.cohabs.achievement1'),
+                  t('experience.cohabs.achievement2'),
+                  t('experience.cohabs.achievement3'),
+                ]}
+                logoUrl="https://media.licdn.com/dms/image/v2/D4E0BAQG0oznqF2P3KA/company-logo_100_100/company-logo_100_100/0/1683553123744/cohabs_logo?e=1753315200&v=beta&t=4-yUdTAibddaXejC-T7SnmlazmBB8bTwY0QbCotGy5c"
+              />
+            </motion.div>
             <motion.div variants={fadeInUp}>
               <ExperienceCard
                 title={t('experience.greenomy.title')}

@@ -9,8 +9,10 @@
   "hero.contactMe": "Contact Me",
 
   "about.title": "About Me",
-  "about.paragraph1": "Senior Software Engineer with a strong background in scalable architecture, process optimization, and cloud-based system development. Experienced in building and scaling platforms from startup to enterprise, ensuring systems are automated, efficient, and adaptable.",
-  "about.paragraph2": "I specialize in high-growth environments, where I build robust software, improve engineering workflows, mentor teams, and push for best practices. My focus is on creating scalable, self-managed platforms that reduce operational friction and support business growth.",
+  "about.paragraph1": "I am a Senior Software Engineer with a strong background in scalable architecture, process optimization, and cloud-based system development. I excel at building and scaling platforms from startup to enterprise, ensuring systems are automated, efficient, and easy to manage.",
+  "about.paragraph2": "On the frontend, I deliver modern, responsive, and accessible user experiences using React, Next.js, and advanced UI frameworks—focusing on performance, usability, and seamless integration with backend and AI-powered services.",
+  "about.paragraph3": "I have hands-on experience designing and deploying AI-driven tools, including context-aware systems, prompt engineering, token optimization, and streaming LLM responses. I leverage vector databases, retrieval-augmented generation, and model finetuning to build intelligent, production-ready solutions.",
+  "about.paragraph4": "I thrive in high-growth environments, where I not only build reliable software but also improve engineering workflows, mentor teams, and push for best practices. My goal is to create highly scalable, self-managed platforms that reduce operational friction and allow businesses to grow without technical bottlenecks.",
 
   "skills.title": "Technical Skills",
   "skills.softwareArchitecture": "Software Architecture & Development",
@@ -19,6 +21,14 @@
   "skills.keyStrengths": "Key Strengths",
 
   "experience.title": "Professional Experience",
+
+  "experience.cohabs.title": "Senior Software engineer",
+  "experience.cohabs.period": "Avril 2025 - Juin 2025",
+  "experience.cohabs.description": "At Cohabs, I focus on building a scalable payments service to focus on all edges cases, to help the team work more efficiently. And most important mirroring transactions to financial tool used by finance department, accounting & payment consolidation.",
+  "experience.cohabs.achievement1": "Third party api integration for communication to accounting tool.",
+  "experience.cohabs.achievement2": "Enhance workflow on events with error managing and queue process.",
+  "experience.cohabs.achievement3": "Handle migration between growing services and changes.",
+
   "experience.greenomy.title": "Senior Software Engineer",
   "experience.greenomy.period": "Dec 2023 - Present",
   "experience.greenomy.description": "At Greenomy, I focus on building a scalable SaaS platform while improving engineering workflows to help the team work more efficiently.",

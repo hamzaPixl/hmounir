@@ -9,8 +9,10 @@
   "hero.contactMe": "Me contacter",
 
   "about.title": "À propos de moi",
-  "about.paragraph1": "Senior Software engineer avec une solide expérience en architecture évolutive, optimisation des processus et développement de systèmes cloud. Expérimenté dans la construction et la mise à l'échelle de plateformes, du démarrage à l'entreprise, garantissant que les systèmes sont automatisés, efficaces et adaptables.",
-  "about.paragraph2": "Je me spécialise dans les environnements à forte croissance, où je construis des logiciels robustes, améliore les flux de travail d'ingénierie, encadre les équipes et pousse pour les meilleures pratiques. Mon objectif est de créer des plateformes évolutives et autogérées qui réduisent les frictions opérationnelles et soutiennent la croissance de l'entreprise.",
+  "about.paragraph1": "Je suis un ingénieur logiciel senior avec une solide expérience en architecture scalable, optimisation des processus et développement de systèmes cloud. J’excelle dans la création et la montée en charge de plateformes, de la startup à l’entreprise, en veillant à ce que les systèmes soient automatisés, efficaces et faciles à gérer.",
+  "about.paragraph2": "Côté frontend, je conçois des expériences utilisateurs modernes, réactives et accessibles avec React, Next.js et des frameworks UI avancés, en mettant l’accent sur la performance, l’ergonomie et l’intégration fluide avec le backend et les services alimentés par l’IA.",
+  "about.paragraph3": "J’ai une expérience concrète dans la conception et le déploiement d’outils pilotés par l’IA, incluant des systèmes contextuels, l’ingénierie de prompts, l’optimisation des tokens et le streaming de réponses LLM. J’utilise les bases de données vectorielles, la génération augmentée par la recherche et le finetuning de modèles pour bâtir des solutions intelligentes et prêtes pour la production.",
+  "about.paragraph4": "Je m’épanouis dans les environnements à forte croissance, où je construis des logiciels fiables tout en améliorant les workflows d’ingénierie, en encadrant les équipes et en promouvant les meilleures pratiques. Mon objectif est de créer des plateformes hautement scalables et autonomes qui réduisent les frictions opérationnelles et permettent aux entreprises de croître sans obstacles techniques.",
 
   "skills.title": "Compétences Techniques",
   "skills.softwareArchitecture": "Architecture & Développement Logiciel",
@@ -19,8 +21,16 @@
   "skills.keyStrengths": "Points Forts",
 
   "experience.title": "Expérience Professionnelle",
+
+  "experience.cohabs.title": "Ingénieur Logiciel Senior",
+  "experience.cohabs.period": "Avril 2025 - Juin 2025",
+  "experience.cohabs.description": "Chez Cohabs, je me concentre sur la création d’un service de paiements évolutif pour couvrir tous les cas particuliers et aider l’équipe à travailler plus efficacement. L’objectif principal est de refléter les transactions dans l’outil financier utilisé par le département financier, la comptabilité et la consolidation des paiements.",
+  "experience.cohabs.achievement1": "Intégration d’API tierces pour la communication avec l’outil de comptabilité.",
+  "experience.cohabs.achievement2": "Amélioration des workflows sur les événements avec gestion des erreurs et traitement en file d’attente.",
+  "experience.cohabs.achievement3": "Gestion de la migration entre des services en croissance et des changements.",
+
   "experience.greenomy.title": "Senior Software engineer",
-  "experience.greenomy.period": "Déc 2023 - Présent",
+  "experience.greenomy.period": "Déc 2023 - Avril 2025",
   "experience.greenomy.description": "Chez Greenomy, je me concentre sur la construction d'une plateforme SaaS évolutive tout en améliorant les flux de travail d'ingénierie pour aider l'équipe à travailler plus efficacement.",
   "experience.greenomy.achievement1": "Automatisation des processus CI/CD, améliorant la vitesse et la fiabilité des déploiements.",
   "experience.greenomy.achievement2": "Introduction de meilleurs flux de travail de développement, d'outils de surveillance et de stratégies de débogage.",
