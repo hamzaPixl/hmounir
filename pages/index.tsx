@@ -1,19 +1,20 @@
-import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
+import { EnvelopeIcon, GlobeAltIcon, MapPinIcon, PhoneIcon } from '@heroicons/react/24/outline';
+import { motion } from 'framer-motion';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { EnvelopeIcon, MapPinIcon, PhoneIcon, GlobeAltIcon } from '@heroicons/react/24/outline';
-import { motion } from 'framer-motion';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import React from 'react';
 
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import Section from '../components/Section';
-import SkillCard from '../components/SkillCard';
-import ExperienceCard from '../components/ExperienceCard';
-import SEO from '../components/SEO';
-import { useTranslate, useScrollPosition } from '../hooks';
 import EducationCard from '../components/EducationCard';
+import ExperienceCard from '../components/ExperienceCard';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
+import Section from '../components/Section';
+import SEO from '../components/SEO';
+import SkillCard from '../components/SkillCard';
+import { useScrollPosition, useTranslate } from '../hooks';
 
 // Animation variants
 const fadeInUp = {
@@ -46,6 +47,8 @@ const logoImagePlaceholder =
 const Home: React.FC = () => {
   const { t } = useTranslate();
   const { scrollToSection } = useScrollPosition();
+  const router = useRouter();
+  const [profileClickCount, setProfileClickCount] = React.useState(0);
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -72,10 +75,18 @@ const Home: React.FC = () => {
                     alt="Hamza Mounir"
                     width={256}
                     height={256}
-                    style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+                    style={{ objectFit: 'cover', width: '100%', height: '100%', cursor: 'pointer' }}
                     placeholder="blur"
                     blurDataURL={profileImagePlaceholder}
                     priority
+                    onClick={() => {
+                      setProfileClickCount(c => {
+                        if (c + 1 === 7) {
+                          router.push('/dev');
+                        }
+                        return c + 1;
+                      });
+                    }}
                   />
                 </div>
               </motion.div>
