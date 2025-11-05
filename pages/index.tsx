@@ -240,7 +240,7 @@ const Home: React.FC = () => {
         {/* Skills Section */}
         <Section id="skills" title={t('skills.title')} className="bg-gray-50">
           <motion.div
-            className="grid grid-cols-2 md:grid-cols-4 gap-8"
+            className="grid grid-cols-1 md:grid-cols-4 gap-8"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-100px' }}
