@@ -240,7 +240,7 @@ const Home: React.FC = () => {
         {/* Skills Section */}
         <Section id="skills" title={t('skills.title')} className="bg-gray-50">
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 gap-8"
+            className="grid grid-cols-2 md:grid-cols-4 gap-8"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-100px' }}
@@ -304,6 +304,10 @@ const Home: React.FC = () => {
                     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg',
                   },
                   {
+                    name: 'Azure',
+                    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-plain.svg',
+                  },
+                  {
                     name: 'Kubernetes',
                     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg',
                   },
@@ -315,6 +319,20 @@ const Home: React.FC = () => {
                     name: 'DevOps',
                     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg',
                   },
+                ]}
+              />
+            </motion.div>
+            <motion.div variants={fadeInUp}>
+              <SkillCard
+                title={t('skills.databases')}
+                skills={[
+                  { name: 'PostgreSQL' },
+                  { name: 'MySQL' },
+                  { name: 'MongoDB' },
+                  { name: 'Redis' },
+                  { name: 'TypeORM' },
+                  { name: 'Prisma' },
+                  { name: 'GraphQL' },
                 ]}
               />
             </motion.div>
@@ -367,7 +385,7 @@ const Home: React.FC = () => {
                   t('experience.cohabs.achievement2'),
                   t('experience.cohabs.achievement3'),
                 ]}
-                logoUrl="https://media.licdn.com/dms/image/v2/D4E0BAQG0oznqF2P3KA/company-logo_100_100/company-logo_100_100/0/1683553123744/cohabs_logo?e=1753315200&v=beta&t=4-yUdTAibddaXejC-T7SnmlazmBB8bTwY0QbCotGy5c"
+                logoUrl="/logos/cohabs.jpeg"
               />
             </motion.div>
             <motion.div variants={fadeInUp}>
@@ -381,7 +399,7 @@ const Home: React.FC = () => {
                   t('experience.greenomy.achievement2'),
                   t('experience.greenomy.achievement3'),
                 ]}
-                logoUrl="https://media.licdn.com/dms/image/v2/C560BAQGU7o1EN5JDUQ/company-logo_200_200/company-logo_200_200/0/1673380747522/greenomysaas_logo?e=1749686400&v=beta&t=fDfN06AP3AznwOUjHK9LbV0PYKtLh33PwS2Hbp1if2w"
+                logoUrl="/logos/greenomy.jpeg"
               />
             </motion.div>
             <motion.div variants={fadeInUp}>
@@ -395,7 +413,7 @@ const Home: React.FC = () => {
                   t('experience.qover.achievement2'),
                   t('experience.qover.achievement3'),
                 ]}
-                logoUrl="https://media.licdn.com/dms/image/v2/D4E0BAQGEsJyigI91Sg/company-logo_100_100/company-logo_100_100/0/1689084960988/qover_logo?e=1749686400&v=beta&t=6WHm6E4N-EmRm7_kj6q_FuzUE4x4t0Cux86UXiKYGQI"
+                logoUrl="/logos/qover.jpeg"
               />
             </motion.div>
             <motion.div variants={fadeInUp}>
@@ -409,7 +427,7 @@ const Home: React.FC = () => {
                   t('experience.pixldev.achievement2'),
                   t('experience.pixldev.achievement3'),
                 ]}
-                logoUrl="https://media.licdn.com/dms/image/v2/D4E0BAQFWnHcZFARs5g/company-logo_100_100/company-logo_100_100/0/1727201326461?e=1749686400&v=beta&t=vphmjRvbOuudR-SQ3x48NALH1MwSOjI_41HoGwcrmJs"
+                logoUrl="/logos/pixl.jpeg"
               />
             </motion.div>
             <motion.div variants={fadeInUp}>
@@ -423,7 +441,7 @@ const Home: React.FC = () => {
                   t('experience.emakina.achievement2'),
                   t('experience.emakina.achievement3'),
                 ]}
-                logoUrl="https://media.licdn.com/dms/image/v2/C4E0BAQFLOvNsYTLcbw/company-logo_100_100/company-logo_100_100/0/1658851368707/emakina_logo?e=1749686400&v=beta&t=jEWKx3oU6VG_nbBRHqcwp979ccQK-A5Ddhvj18ZorUg"
+                logoUrl="/logos/emakina.jpeg"
               />
             </motion.div>
           </motion.div>
@@ -442,7 +460,7 @@ const Home: React.FC = () => {
               <EducationCard
                 degree={t('education.degree')}
                 institution={t('education.institution')}
-                logoUrl="https://media.licdn.com/dms/image/v2/C4D0BAQGTSVQ57TLryQ/company-logo_200_200/company-logo_200_200/0/1630543401547/haute_ecole_l_onard_de_vinci_logo?e=1749686400&v=beta&t=krzyk54vyHJqwbsBtZOVQzwMaVhwb2QyIxrqtzg-t5M"
+                logoUrl="/logos/vinci.jpeg"
               />
             </motion.div>
           </motion.div>
