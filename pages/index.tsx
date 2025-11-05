@@ -248,15 +248,35 @@ const Home: React.FC = () => {
           >
             <motion.div variants={fadeInUp}>
               <SkillCard
+                title={t('skills.aiLLM')}
+                skills={[
+                  { name: 'Agent Orchestration' },
+                  { name: 'RAG / Hybrid Retrieval' },
+                  { name: 'Prompt Engineering' },
+                  { name: 'Model Control (MCP)' },
+                  { name: 'Guardrails & Safety' },
+                ]}
+              />
+            </motion.div>
+            <motion.div variants={fadeInUp}>
+              <SkillCard
                 title={t('skills.softwareArchitecture')}
                 skills={[
                   {
-                    name: 'TypeScript',
-                    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
+                    name: 'Python',
+                    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
                   },
                   {
-                    name: 'Node.js',
-                    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
+                    name: 'FastAPI',
+                    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg',
+                  },
+                  {
+                    name: 'Azure',
+                    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-plain.svg',
+                  },
+                  {
+                    name: 'TypeScript',
+                    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
                   },
                   {
                     name: 'React',
@@ -267,57 +287,16 @@ const Home: React.FC = () => {
                     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg',
                   },
                   {
+                    name: 'Node.js',
+                    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
+                  },
+                  {
                     name: 'NestJS',
                     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original-wordmark.svg',
                   },
                   {
                     name: 'GraphQL',
                     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg',
-                  },
-                  {
-                    name: 'REST APIs',
-                    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg',
-                  },
-                  {
-                    name: 'Microservices',
-                    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg',
-                  },
-                ]}
-              />
-            </motion.div>
-            <motion.div variants={fadeInUp}>
-              <SkillCard
-                title={t('skills.businessCritical')}
-                skills={[
-                  { name: 'System Design' },
-                  { name: 'Cloud Architecture' },
-                  {
-                    name: 'AWS',
-                    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg',
-                  },
-                  {
-                    name: 'GCP',
-                    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg',
-                  },
-                  {
-                    name: 'Docker',
-                    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg',
-                  },
-                  {
-                    name: 'Azure',
-                    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-plain.svg',
-                  },
-                  {
-                    name: 'Kubernetes',
-                    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg',
-                  },
-                  {
-                    name: 'CI/CD',
-                    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg',
-                  },
-                  {
-                    name: 'DevOps',
-                    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg',
                   },
                 ]}
               />
@@ -326,26 +305,21 @@ const Home: React.FC = () => {
               <SkillCard
                 title={t('skills.databases')}
                 skills={[
-                  { name: 'PostgreSQL' },
-                  { name: 'MySQL' },
-                  { name: 'MongoDB' },
-                  { name: 'Redis' },
-                  { name: 'TypeORM' },
-                  { name: 'Prisma' },
-                  { name: 'GraphQL' },
-                ]}
-              />
-            </motion.div>
-            <motion.div variants={fadeInUp}>
-              <SkillCard
-                title={t('skills.leadership')}
-                skills={[
-                  { name: 'Team Leadership' },
-                  { name: 'Mentoring' },
-                  { name: 'Code Reviews' },
-                  { name: 'Agile/Scrum' },
-                  { name: 'Technical Planning' },
-                  { name: 'Process Improvement' },
+                  {
+                    name: 'PostgreSQL',
+                    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg',
+                  },
+                  {
+                    name: 'MongoDB',
+                    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
+                  },
+                  {
+                    name: 'Redis',
+                    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg',
+                  },
+                  {
+                    name: 'Vector Databases',
+                  },
                 ]}
               />
             </motion.div>
@@ -353,12 +327,11 @@ const Home: React.FC = () => {
               <SkillCard
                 title={t('skills.keyStrengths')}
                 skills={[
-                  { name: 'Problem Solving' },
-                  { name: 'System Architecture' },
-                  { name: 'Performance Optimization' },
+                  { name: 'End-to-End Product' },
+                  { name: 'System Observability' },
+                  { name: 'Logging & Tracing' },
                   { name: 'Security Best Practices' },
                   { name: 'Technical Documentation' },
-                  { name: 'Cross-team Collaboration' },
                 ]}
               />
             </motion.div>
@@ -374,6 +347,24 @@ const Home: React.FC = () => {
             viewport={{ once: true, margin: '-100px' }}
             variants={staggerContainer}
           >
+            <motion.div variants={fadeInUp}>
+              <ExperienceCard
+                title={t('experience.belfius.title')}
+                company="Belfius"
+                period={t('experience.belfius.period')}
+                description={t('experience.belfius.description')}
+                achievements={[
+                  t('experience.belfius.achievement1'),
+                  t('experience.belfius.achievement2'),
+                  t('experience.belfius.achievement3'),
+                  t('experience.belfius.achievement4'),
+                  t('experience.belfius.achievement5'),
+                  t('experience.belfius.achievement6'),
+                  t('experience.belfius.achievement7'),
+                ]}
+                logoUrl="/logos/belfius.jpeg"
+              />
+            </motion.div>
             <motion.div variants={fadeInUp}>
               <ExperienceCard
                 title={t('experience.cohabs.title')}
@@ -404,20 +395,6 @@ const Home: React.FC = () => {
             </motion.div>
             <motion.div variants={fadeInUp}>
               <ExperienceCard
-                title={t('experience.qover.title')}
-                company="Qover"
-                period={t('experience.qover.period')}
-                description={t('experience.qover.description')}
-                achievements={[
-                  t('experience.qover.achievement1'),
-                  t('experience.qover.achievement2'),
-                  t('experience.qover.achievement3'),
-                ]}
-                logoUrl="/logos/qover.jpeg"
-              />
-            </motion.div>
-            <motion.div variants={fadeInUp}>
-              <ExperienceCard
                 title={t('experience.pixldev.title')}
                 company="Pixl Srl"
                 period={t('experience.pixldev.period')}
@@ -430,6 +407,21 @@ const Home: React.FC = () => {
                 logoUrl="/logos/pixl.jpeg"
               />
             </motion.div>
+            <motion.div variants={fadeInUp}>
+              <ExperienceCard
+                title={t('experience.qover.title')}
+                company="Qover"
+                period={t('experience.qover.period')}
+                description={t('experience.qover.description')}
+                achievements={[
+                  t('experience.qover.achievement1'),
+                  t('experience.qover.achievement2'),
+                  t('experience.qover.achievement3'),
+                ]}
+                logoUrl="/logos/qover.jpeg"
+              />
+            </motion.div>
+
             <motion.div variants={fadeInUp}>
               <ExperienceCard
                 title={t('experience.emakina.title')}
