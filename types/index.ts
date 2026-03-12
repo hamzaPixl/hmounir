@@ -22,17 +22,9 @@ export interface ExperienceCardProps {
   logoUrl?: string;
 }
 
-export interface LanguageCardProps {
-  language: string;
-  level: string;
-}
-
 export interface EducationCardProps {
   degree: string;
   institution: string;
+  period?: string;
   logoUrl?: string;
-}
-
-export interface ContactFormProps {
-  title: string;
 }

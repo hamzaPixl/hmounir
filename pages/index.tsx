@@ -1,9 +1,7 @@
-import { EnvelopeIcon, GlobeAltIcon, MapPinIcon, PhoneIcon } from '@heroicons/react/24/outline';
 import { motion } from 'framer-motion';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Image from 'next/image';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
 
@@ -13,562 +11,569 @@ import Footer from '../components/Footer';
 import Header from '../components/Header';
 import Section from '../components/Section';
 import SEO from '../components/SEO';
-import SkillCard from '../components/SkillCard';
 import { useScrollPosition, useTranslate } from '../hooks';
 
-// Animation variants
-const fadeInUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-    },
-  },
+const fadeIn = {
+  hidden: { opacity: 0, y: 12 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
 };
 
-const staggerContainer = {
+const stagger = {
   hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
+  visible: { opacity: 1, transition: { staggerChildren: 0.08 } },
 };
-
-// Blur data URLs for image placeholders
-const profileImagePlaceholder =
-  'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/2wBDAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/wAARCAAIAAgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD+/iiiigD/2Q==';
-const logoImagePlaceholder =
-  'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFFmlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDIgNzkuMTYwOTI0LCAyMDE3LzA3LzEzLTAxOjA2OjM5ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgKFdpbmRvd3MpIiB4bXA6Q3JlYXRlRGF0ZT0iMjAyMC0wNy0wNlQxMTozOToxOCswMTowMCIgeG1wOk1vZGlmeURhdGU9IjIwMjAtMDctMDZUMTE6NDA6MzkrMDE6MDAiIHhtcDpNZXRhZGF0YURhdGU9IjIwMjAtMDctMDZUMTE6NDA6MzkrMDE6MDAiIGRjOmZvcm1hdD0iaW1hZ2UvcG5nIiBwaG90b3Nob3A6Q29sb3JNb2RlPSIzIiBwaG90b3Nob3A6SUNDUHJvZmlsZT0ic1JHQiBJRUM2MTk2Ni0yLjEiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NzZjMjBiN2ItZmQ4ZC0zODQ0LWIyZWMtNDFjOTVhMGE5NzlmIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjc2YzIwYjdiLWZkOGQtMzg0NC1iMmVjLTQxYzk1YTBhOTc5ZiIgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ4bXAuZGlkOjc2YzIwYjdiLWZkOGQtMzg0NC1iMmVjLTQxYzk1YTBhOTc5ZiI+IDx4bXBNTTpIaXN0b3J5PiA8cmRmOlNlcT4gPHJkZjpsaSBzdEV2dDphY3Rpb249ImNyZWF0ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6NzZjMjBiN2ItZmQ4ZC0zODQ0LWIyZWMtNDFjOTVhMGE5NzlmIiBzdEV2dDp3aGVuPSIyMDIwLTA3LTA2VDExOjM5OjE4KzAxOjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgQ0MgKFdpbmRvd3MpIi8+IDwvcmRmOlNlcT4gPC94bXBNTTpIaXN0b3J5PiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PgEk4u4AAAAiSURBVBiVY/j//z8DEIAoIICJAQqgNENVVRVcAe0UAADpfQwLUHj2vgAAAABJRU5ErkJggg==';
 
 const Home: React.FC = () => {
   const { t } = useTranslate();
   const { scrollToSection } = useScrollPosition();
   const router = useRouter();
   const [, setProfileClickCount] = React.useState(0);
+
   return (
     <div className="min-h-screen flex flex-col">
       <SEO />
       <Header />
 
       <main className="flex-grow">
-        {/* Hero Section */}
-        <section
-          id="top"
-          className="py-16 md:py-24 bg-gradient-to-r from-dark to-dark/90 text-white"
-        >
+        {/* Hero — centered, modern */}
+        <section id="top" className="py-24 md:py-32">
           <div className="container">
-            <div className="flex flex-col md:flex-row items-center">
-              <motion.div
-                className="md:w-1/2 mb-8 md:mb-0"
-                initial="hidden"
-                animate="visible"
-                variants={fadeInUp}
-              >
-                <div className="relative w-64 h-64 mx-auto md:mx-0 rounded-full overflow-hidden border-4 border-primary">
+            <motion.div
+              className="flex flex-col items-center text-center"
+              initial="hidden"
+              animate="visible"
+              variants={stagger}
+            >
+              <motion.div className="mb-8" variants={fadeIn}>
+                <div className="relative w-28 h-28 rounded-full overflow-hidden ring-2 ring-accent ring-offset-4 ring-offset-white dark:ring-offset-[#0a0a0a]">
                   <Image
                     src="/profile.jpeg"
                     alt="Hamza Mounir"
-                    width={256}
-                    height={256}
+                    width={112}
+                    height={112}
                     style={{ objectFit: 'cover', width: '100%', height: '100%', cursor: 'pointer' }}
-                    placeholder="blur"
-                    blurDataURL={profileImagePlaceholder}
                     priority
                     onClick={() => {
                       setProfileClickCount(c => {
-                        if (c + 1 === 7) {
-                          router.push('/dev');
-                        }
+                        if (c + 1 === 7) router.push('/dev');
                         return c + 1;
                       });
                     }}
                   />
                 </div>
               </motion.div>
-              <motion.div
-                className="md:w-1/2 text-center md:text-left"
-                initial="hidden"
-                animate="visible"
-                variants={staggerContainer}
+
+              <motion.h1
+                className="text-4xl md:text-5xl font-bold tracking-tight mb-3"
+                variants={fadeIn}
               >
-                <motion.h1 className="text-4xl md:text-5xl font-bold mb-4" variants={fadeInUp}>
-                  Hamza Mounir
-                </motion.h1>
-                <motion.p className="text-xl md:text-2xl text-gray-200 mb-6" variants={fadeInUp}>
-                  {t('hero.title')}
-                </motion.p>
+                Hamza Mounir
+              </motion.h1>
 
-                <motion.div
-                  className="flex flex-col space-y-3 mb-8 items-center md:items-start"
-                  variants={staggerContainer}
-                >
-                  <motion.div className="flex items-center" variants={fadeInUp}>
-                    <MapPinIcon className="h-5 w-5 text-primary mr-2" />
-                    <span>Brussels, Belgium</span>
-                  </motion.div>
-                  <motion.div className="flex items-center" variants={fadeInUp}>
-                    <PhoneIcon className="h-5 w-5 text-primary mr-2" />
-                    <Link href="tel:+32488203567" legacyBehavior>
-                      <a className="hover:text-primary transition-colors">+32 488 20 35 67</a>
-                    </Link>
-                  </motion.div>
-                  <motion.div className="flex items-center" variants={fadeInUp}>
-                    <EnvelopeIcon className="h-5 w-5 text-primary mr-2" />
-                    <Link href="mailto:hamza@pixldev.be" legacyBehavior>
-                      <a className="hover:text-primary transition-colors">hamza@pixldev.be</a>
-                    </Link>
-                  </motion.div>
-                  <motion.div className="flex items-center" variants={fadeInUp}>
-                    <GlobeAltIcon className="h-5 w-5 text-primary mr-2" />
-                    <div className="space-x-3">
-                      <Link href="https://www.pixldev.be" legacyBehavior>
-                        <a
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="hover:text-primary transition-colors"
-                        >
-                          pixldev.be
-                        </a>
-                      </Link>
-                      <span>|</span>
-                      <Link href="https://github.com/hamzaPixl" legacyBehavior>
-                        <a
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="hover:text-primary transition-colors"
-                        >
-                          GitHub
-                        </a>
-                      </Link>
-                      <span>|</span>
-                      <Link
-                        href="https://www.linkedin.com/in/hamza-mounir-0a7bb6139/"
-                        legacyBehavior
-                      >
-                        <a
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="hover:text-primary transition-colors"
-                        >
-                          LinkedIn
-                        </a>
-                      </Link>
-                    </div>
-                  </motion.div>
-                </motion.div>
+              <motion.p
+                className="text-lg text-gray-500 dark:text-gray-400 max-w-lg mb-8"
+                variants={fadeIn}
+              >
+                {t('hero.title')}
+              </motion.p>
 
-                <motion.div
-                  className="flex flex-wrap justify-center md:justify-start gap-4 mb-8"
-                  variants={fadeInUp}
+              <motion.div className="flex flex-wrap justify-center gap-3 mb-8" variants={fadeIn}>
+                <button onClick={() => scrollToSection('contact')} className="btn">
+                  {t('hero.contactMe')}
+                </button>
+                <a
+                  href="/resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-secondary"
                 >
-                  <motion.button
-                    onClick={() => scrollToSection('contact')}
-                    className="btn"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    {t('hero.contactMe')}
-                  </motion.button>
-                  <motion.a
-                    href="/resume.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn bg-white text-dark border border-primary hover:bg-gray-50"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    {t('header.downloadCV')}
-                  </motion.a>
-                </motion.div>
-
-                {/* Business Card */}
-                <motion.div
-                  className="bg-white/10 p-4 rounded-lg backdrop-blur-sm border border-white/20"
-                  variants={fadeInUp}
-                >
-                  <div className="flex items-center flex-col mb-2">
-                    <div className="w-12 h-12 relative mr-3">
-                      <Image
-                        src="/logo-inverted.png"
-                        alt="Pixl Logo"
-                        width={48}
-                        height={48}
-                        style={{ objectFit: 'contain', width: '100%', height: '100%' }}
-                        placeholder="blur"
-                        blurDataURL={logoImagePlaceholder}
-                      />
-                    </div>
-                    <div className="flex flex-col items-center">
-                      <h3 className="text-lg font-bold text-primary">Pixl SRL</h3>
-                      <p className="text-sm text-gray-300">BE 0805.449.693</p>
-                    </div>
-                  </div>
-                </motion.div>
+                  {t('header.downloadCV')}
+                </a>
               </motion.div>
-            </div>
+
+              {/* Social row */}
+              <motion.div className="flex items-center gap-4 mb-8" variants={fadeIn}>
+                <a
+                  href="mailto:hamza@pixldev.be"
+                  className="p-2 rounded-lg text-gray-400 dark:text-gray-500 hover:text-accent transition-colors"
+                  title="Email"
+                >
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <rect x="2" y="4" width="20" height="16" rx="2" />
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                  </svg>
+                </a>
+                <a
+                  href="tel:+32488203567"
+                  className="p-2 rounded-lg text-gray-400 dark:text-gray-500 hover:text-accent transition-colors"
+                  title="Phone"
+                >
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                  </svg>
+                </a>
+                <a
+                  href="https://github.com/hamzaPixl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 rounded-lg text-gray-400 dark:text-gray-500 hover:text-accent transition-colors"
+                  title="GitHub"
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                  </svg>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/hamza-mounir-0a7bb6139/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 rounded-lg text-gray-400 dark:text-gray-500 hover:text-accent transition-colors"
+                  title="LinkedIn"
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                  </svg>
+                </a>
+                <a
+                  href="https://www.pixldev.be"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 rounded-lg text-gray-400 dark:text-gray-500 hover:text-accent transition-colors text-xs font-medium"
+                  title="Website"
+                >
+                  pixldev.be
+                </a>
+              </motion.div>
+
+              {/* Pixl badge */}
+              <motion.div
+                className="inline-flex items-center gap-3 border border-gray-200/60 dark:border-gray-800 rounded-full px-5 py-2.5"
+                variants={fadeIn}
+              >
+                <div className="w-7 h-7 relative">
+                  <Image
+                    src="/logo-inverted.png"
+                    alt="Pixl Logo"
+                    width={28}
+                    height={28}
+                    className="invert dark:invert-0"
+                    style={{ objectFit: 'contain', width: '100%', height: '100%' }}
+                  />
+                </div>
+                <div className="text-left">
+                  <p className="text-sm font-medium leading-tight">Pixl SRL</p>
+                  <p className="text-[10px] text-gray-400 dark:text-gray-600">BE 0805.449.693</p>
+                </div>
+              </motion.div>
+            </motion.div>
           </div>
         </section>
 
-        {/* About Section */}
+        {/* About */}
         <Section id="about" title={t('about.title')}>
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 gap-8"
+            className="space-y-4 max-w-3xl"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: '-100px' }}
-            variants={staggerContainer}
+            viewport={{ once: true, margin: '-80px' }}
+            variants={stagger}
           >
-            <motion.p className="text-lg" variants={fadeInUp}>
-              {t('about.paragraph1')}
-            </motion.p>
-            <motion.p className="text-lg" variants={fadeInUp}>
-              {t('about.paragraph2')}
-            </motion.p>
-            <motion.p className="text-lg" variants={fadeInUp}>
-              {t('about.paragraph3')}
-            </motion.p>
-            <motion.p className="text-lg" variants={fadeInUp}>
-              {t('about.paragraph4')}
-            </motion.p>
+            {[1, 2, 3, 4, 5].map(i => (
+              <motion.p
+                key={i}
+                className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed"
+                variants={fadeIn}
+              >
+                {t(`about.paragraph${i}`)}
+              </motion.p>
+            ))}
           </motion.div>
         </Section>
 
-        {/* Skills Section */}
-        <Section id="skills" title={t('skills.title')} className="bg-gray-50">
+        {/* Projects */}
+        <Section id="projects" title={t('projects.title')}>
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-4 gap-8"
+            className="space-y-16"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: '-100px' }}
-            variants={staggerContainer}
+            viewport={{ once: true, margin: '-80px' }}
+            variants={stagger}
           >
-            <motion.div variants={fadeInUp}>
-              <SkillCard
-                title={t('skills.aiLLM')}
-                skills={[
-                  { name: 'Agent Orchestration' },
-                  { name: 'RAG / Hybrid Retrieval' },
-                  { name: 'Prompt Engineering' },
-                  { name: 'Model Control (MCP)' },
-                  { name: 'Guardrails & Safety' },
-                ]}
-              />
+            {/* Feen */}
+            <motion.div variants={fadeIn}>
+              <div className="flex items-baseline gap-3 mb-1">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100">
+                  {t('projects.feen.name')}
+                </h3>
+                <span className="text-sm text-accent">{t('projects.feen.subtitle')}</span>
+              </div>
+              <a
+                href="https://www.feen.be"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs text-gray-400 hover:text-accent transition-colors"
+              >
+                feen.be
+              </a>
+              <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mt-4 mb-4 max-w-2xl">
+                {t('projects.feen.description')}
+              </p>
+              <ul className="space-y-1.5 mb-5">
+                {[1, 2, 3, 4, 5, 6, 7].map(i => (
+                  <li key={i} className="text-sm text-gray-500 dark:text-gray-400 flex items-start">
+                    <span className="w-1 h-1 bg-accent/60 rounded-full mr-2.5 mt-1.5 flex-shrink-0" />
+                    <span>{t(`projects.feen.achievement${i}`)}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="flex flex-wrap gap-1.5">
+                {[
+                  'Python',
+                  'TypeScript',
+                  'Next.js',
+                  'AI/LLM APIs',
+                  'Vector DBs',
+                  'Microservices',
+                ].map(tech => (
+                  <span
+                    key={tech}
+                    className="text-[11px] border border-gray-200 dark:border-gray-800 rounded-full px-2.5 py-0.5 text-gray-400 dark:text-gray-500"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
             </motion.div>
-            <motion.div variants={fadeInUp}>
-              <SkillCard
-                title={t('skills.softwareArchitecture')}
-                skills={[
-                  {
-                    name: 'Python',
-                    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
-                  },
-                  {
-                    name: 'FastAPI',
-                    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg',
-                  },
-                  {
-                    name: 'Azure',
-                    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-plain.svg',
-                  },
-                  {
-                    name: 'TypeScript',
-                    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
-                  },
-                  {
-                    name: 'React',
-                    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
-                  },
-                  {
-                    name: 'Next.js',
-                    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg',
-                  },
-                  {
-                    name: 'Node.js',
-                    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
-                  },
-                  {
-                    name: 'NestJS',
-                    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original-wordmark.svg',
-                  },
-                  {
-                    name: 'GraphQL',
-                    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg',
-                  },
-                ]}
-              />
-            </motion.div>
-            <motion.div variants={fadeInUp}>
-              <SkillCard
-                title={t('skills.databases')}
-                skills={[
-                  {
-                    name: 'PostgreSQL',
-                    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg',
-                  },
-                  {
-                    name: 'MongoDB',
-                    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
-                  },
-                  {
-                    name: 'Redis',
-                    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg',
-                  },
-                  {
-                    name: 'Vector Databases',
-                  },
-                ]}
-              />
-            </motion.div>
-            <motion.div variants={fadeInUp}>
-              <SkillCard
-                title={t('skills.keyStrengths')}
-                skills={[
-                  { name: 'End-to-End Product' },
-                  { name: 'System Observability' },
-                  { name: 'Logging & Tracing' },
-                  { name: 'Security Best Practices' },
-                  { name: 'Technical Documentation' },
-                ]}
-              />
+
+            {/* Synq */}
+            <motion.div variants={fadeIn}>
+              <div className="flex items-baseline gap-3 mb-1">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100">
+                  {t('projects.synq.name')}
+                </h3>
+                <span className="text-sm text-accent">{t('projects.synq.subtitle')}</span>
+              </div>
+              <a
+                href="https://synq.pixldev.be"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs text-gray-400 hover:text-accent transition-colors"
+              >
+                synq.pixldev.be
+              </a>
+              <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mt-4 mb-4 max-w-2xl">
+                {t('projects.synq.description')}
+              </p>
+              <ul className="space-y-1.5 mb-5">
+                {[1, 2, 3, 4, 5, 6, 7, 8].map(i => (
+                  <li key={i} className="text-sm text-gray-500 dark:text-gray-400 flex items-start">
+                    <span className="w-1 h-1 bg-accent/60 rounded-full mr-2.5 mt-1.5 flex-shrink-0" />
+                    <span>{t(`projects.synq.feature${i}`)}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="flex flex-wrap gap-1.5">
+                {[
+                  'TypeScript',
+                  'AI Agents',
+                  'DAG Engine',
+                  'Plugin Architecture',
+                  'Multi-Provider',
+                ].map(tech => (
+                  <span
+                    key={tech}
+                    className="text-[11px] border border-gray-200 dark:border-gray-800 rounded-full px-2.5 py-0.5 text-gray-400 dark:text-gray-500"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
             </motion.div>
           </motion.div>
         </Section>
 
-        {/* Experience Section */}
+        {/* Skills — text columns, no cards */}
+        <Section id="skills" title={t('skills.title')}>
+          <motion.div
+            className="grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-80px' }}
+            variants={stagger}
+          >
+            <motion.div variants={fadeIn}>
+              <h4 className="text-sm font-semibold text-accent mb-3">{t('skills.backend')}</h4>
+              <ul className="space-y-1.5">
+                {[
+                  'TypeScript',
+                  'Python',
+                  'Node.js',
+                  'NestJS',
+                  'FastAPI',
+                  'gRPC',
+                  'REST',
+                  'GraphQL',
+                  'Microservices',
+                  'Event-Driven',
+                ].map(s => (
+                  <li key={s} className="text-sm text-gray-500 dark:text-gray-400">
+                    {s}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+            <motion.div variants={fadeIn}>
+              <h4 className="text-sm font-semibold text-accent mb-3">
+                {t('skills.aiEngineering')}
+              </h4>
+              <ul className="space-y-1.5">
+                {[
+                  'LLM Integration',
+                  'RAG',
+                  'Vector Search',
+                  'Prompt Engineering',
+                  'Agent Orchestration',
+                  'Streaming',
+                  'Token Optimization',
+                  'Guardrails',
+                ].map(s => (
+                  <li key={s} className="text-sm text-gray-500 dark:text-gray-400">
+                    {s}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+            <motion.div variants={fadeIn}>
+              <h4 className="text-sm font-semibold text-accent mb-3">{t('skills.frontend')}</h4>
+              <ul className="space-y-1.5">
+                {['React', 'Next.js', 'TailwindCSS', 'SSR / ISR', 'WCAG / ARIA', 'Responsive'].map(
+                  s => (
+                    <li key={s} className="text-sm text-gray-500 dark:text-gray-400">
+                      {s}
+                    </li>
+                  )
+                )}
+              </ul>
+            </motion.div>
+            <motion.div variants={fadeIn}>
+              <h4 className="text-sm font-semibold text-accent mb-3">{t('skills.devops')}</h4>
+              <ul className="space-y-1.5">
+                {[
+                  'Azure',
+                  'GCP',
+                  'Docker',
+                  'AKS',
+                  'CI/CD',
+                  'Git',
+                  'PostgreSQL',
+                  'MongoDB',
+                  'Redis',
+                ].map(s => (
+                  <li key={s} className="text-sm text-gray-500 dark:text-gray-400">
+                    {s}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          </motion.div>
+        </Section>
+
+        {/* Experience */}
         <Section id="experience" title={t('experience.title')}>
           <motion.div
-            className="space-y-8"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: '-100px' }}
-            variants={staggerContainer}
+            viewport={{ once: true, margin: '-80px' }}
+            variants={stagger}
           >
-            <motion.div variants={fadeInUp}>
+            <motion.div variants={fadeIn}>
               <ExperienceCard
                 title={t('experience.belfius.title')}
                 company="Belfius"
                 period={t('experience.belfius.period')}
                 description={t('experience.belfius.description')}
-                achievements={[
-                  t('experience.belfius.achievement1'),
-                  t('experience.belfius.achievement2'),
-                  t('experience.belfius.achievement3'),
-                  t('experience.belfius.achievement4'),
-                  t('experience.belfius.achievement5'),
-                  t('experience.belfius.achievement6'),
-                  t('experience.belfius.achievement7'),
-                ]}
+                achievements={[1, 2, 3, 4].map(i => t(`experience.belfius.achievement${i}`))}
                 logoUrl="/logos/belfius.jpeg"
               />
             </motion.div>
-            <motion.div variants={fadeInUp}>
+            <motion.div variants={fadeIn}>
               <ExperienceCard
                 title={t('experience.cohabs.title')}
                 company="Cohabs"
                 period={t('experience.cohabs.period')}
                 description={t('experience.cohabs.description')}
-                achievements={[
-                  t('experience.cohabs.achievement1'),
-                  t('experience.cohabs.achievement2'),
-                  t('experience.cohabs.achievement3'),
-                ]}
+                achievements={[1, 2, 3, 4].map(i => t(`experience.cohabs.achievement${i}`))}
                 logoUrl="/logos/cohabs.jpeg"
               />
             </motion.div>
-            <motion.div variants={fadeInUp}>
+            <motion.div variants={fadeIn}>
               <ExperienceCard
                 title={t('experience.greenomy.title')}
                 company="Greenomy"
                 period={t('experience.greenomy.period')}
                 description={t('experience.greenomy.description')}
-                achievements={[
-                  t('experience.greenomy.achievement1'),
-                  t('experience.greenomy.achievement2'),
-                  t('experience.greenomy.achievement3'),
-                ]}
+                achievements={[1, 2, 3, 4].map(i => t(`experience.greenomy.achievement${i}`))}
                 logoUrl="/logos/greenomy.jpeg"
               />
             </motion.div>
-            <motion.div variants={fadeInUp}>
-              <ExperienceCard
-                title={t('experience.pixldev.title')}
-                company="Pixl Srl"
-                period={t('experience.pixldev.period')}
-                description={t('experience.pixldev.description')}
-                achievements={[
-                  t('experience.pixldev.achievement1'),
-                  t('experience.pixldev.achievement2'),
-                  t('experience.pixldev.achievement3'),
-                ]}
-                logoUrl="/logos/pixl.jpeg"
-              />
-            </motion.div>
-            <motion.div variants={fadeInUp}>
+            <motion.div variants={fadeIn}>
               <ExperienceCard
                 title={t('experience.qover.title')}
                 company="Qover"
                 period={t('experience.qover.period')}
                 description={t('experience.qover.description')}
-                achievements={[
-                  t('experience.qover.achievement1'),
-                  t('experience.qover.achievement2'),
-                  t('experience.qover.achievement3'),
-                ]}
+                achievements={[1, 2, 3, 4, 5].map(i => t(`experience.qover.achievement${i}`))}
                 logoUrl="/logos/qover.jpeg"
               />
             </motion.div>
-
-            <motion.div variants={fadeInUp}>
+            <motion.div variants={fadeIn}>
               <ExperienceCard
                 title={t('experience.emakina.title')}
                 company="Emakina"
                 period={t('experience.emakina.period')}
                 description={t('experience.emakina.description')}
-                achievements={[
-                  t('experience.emakina.achievement1'),
-                  t('experience.emakina.achievement2'),
-                  t('experience.emakina.achievement3'),
-                ]}
+                achievements={[1, 2, 3].map(i => t(`experience.emakina.achievement${i}`))}
                 logoUrl="/logos/emakina.jpeg"
               />
             </motion.div>
           </motion.div>
         </Section>
 
-        {/* Education Section */}
-        <Section id="education" title={t('education.title')} className="bg-gray-50">
+        {/* Education & Languages */}
+        <Section id="education" title={t('education.title')}>
           <motion.div
-            className="max-w-2xl mx-auto md:mx-0"
+            className="space-y-10"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: '-100px' }}
-            variants={staggerContainer}
+            viewport={{ once: true, margin: '-80px' }}
+            variants={stagger}
           >
-            <motion.div variants={fadeInUp}>
+            <motion.div variants={fadeIn}>
               <EducationCard
                 degree={t('education.degree')}
                 institution={t('education.institution')}
+                period={t('education.period')}
                 logoUrl="/logos/vinci.jpeg"
               />
+            </motion.div>
+
+            <motion.div variants={fadeIn}>
+              <h3 className="text-sm font-semibold text-accent mb-4">{t('languages.title')}</h3>
+              <div className="flex gap-8">
+                <div>
+                  <p className="text-sm font-medium text-gray-900 dark:text-gray-100">
+                    {t('languages.french')}
+                  </p>
+                  <p className="text-xs text-gray-400 dark:text-gray-500">
+                    {t('languages.frenchLevel')}
+                  </p>
+                </div>
+                <div>
+                  <p className="text-sm font-medium text-gray-900 dark:text-gray-100">
+                    {t('languages.english')}
+                  </p>
+                  <p className="text-xs text-gray-400 dark:text-gray-500">
+                    {t('languages.englishLevel')}
+                  </p>
+                </div>
+              </div>
             </motion.div>
           </motion.div>
         </Section>
 
-        {/* Contact Section */}
+        {/* Contact — centered CTA, action buttons */}
         <Section id="contact" title={t('contact.title')}>
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 gap-8"
+            className="text-center max-w-lg mx-auto"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: '-100px' }}
-            variants={staggerContainer}
+            viewport={{ once: true, margin: '-80px' }}
+            variants={stagger}
           >
-            <motion.div variants={fadeInUp}>
-              <p className="text-lg mb-6">{t('contact.description')}</p>
-              <div className="space-y-4">
-                <div className="flex items-center">
-                  <EnvelopeIcon className="h-5 w-5 text-primary mr-3" />
-                  <Link href="mailto:hamza@pixldev.be" legacyBehavior>
-                    <a className="hover:text-primary transition-colors">hamza@pixldev.be</a>
-                  </Link>
-                </div>
-                <div className="flex items-center">
-                  <PhoneIcon className="h-5 w-5 text-primary mr-3" />
-                  <Link href="tel:+32488203567" legacyBehavior>
-                    <a className="hover:text-primary transition-colors">+32 488 20 35 67</a>
-                  </Link>
-                </div>
-                <div className="flex items-center">
-                  <GlobeAltIcon className="h-5 w-5 text-primary mr-3" />
-                  <div className="space-x-3">
-                    <Link href="https://www.pixldev.be" legacyBehavior>
-                      <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:text-primary transition-colors"
-                      >
-                        pixldev.be
-                      </a>
-                    </Link>
-                    <span>|</span>
-                    <Link href="https://github.com/hamzaPixl" legacyBehavior>
-                      <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:text-primary transition-colors"
-                      >
-                        GitHub
-                      </a>
-                    </Link>
-                    <span>|</span>
-                    <Link href="https://www.linkedin.com/in/hamza-mounir-0a7bb6139/" legacyBehavior>
-                      <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:text-primary transition-colors"
-                      >
-                        LinkedIn
-                      </a>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
+            <motion.p className="text-gray-500 dark:text-gray-400 mb-8" variants={fadeIn}>
+              {t('contact.description')}
+            </motion.p>
 
-            <motion.div variants={fadeInUp}>
-              <form className="card">
-                <h3 className="text-xl font-semibold mb-6">{t('contact.form.title')}</h3>
-                <div className="space-y-4">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                      {t('contact.form.name')}
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                      {t('contact.form.email')}
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary"
-                    />
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="message"
-                      className="block text-sm font-medium text-gray-700 mb-1"
-                    >
-                      {t('contact.form.message')}
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows={4}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary"
-                    ></textarea>
-                  </div>
-                  <motion.button
-                    type="submit"
-                    className="btn w-full"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
+            <motion.div className="flex flex-wrap justify-center gap-3" variants={fadeIn}>
+              <a href="mailto:hamza@pixldev.be" className="btn">
+                <span className="flex items-center gap-2">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   >
-                    {t('contact.form.send')}
-                  </motion.button>
-                </div>
-              </form>
+                    <rect x="2" y="4" width="20" height="16" rx="2" />
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                  </svg>
+                  hamza@pixldev.be
+                </span>
+              </a>
+              <a
+                href="https://github.com/hamzaPixl"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary"
+              >
+                <span className="flex items-center gap-2">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                  </svg>
+                  GitHub
+                </span>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/hamza-mounir-0a7bb6139/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary"
+              >
+                <span className="flex items-center gap-2">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                  </svg>
+                  LinkedIn
+                </span>
+              </a>
+              <a href="tel:+32488203567" className="btn-secondary">
+                <span className="flex items-center gap-2">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                  </svg>
+                  +32 488 20 35 67
+                </span>
+              </a>
             </motion.div>
           </motion.div>
         </Section>

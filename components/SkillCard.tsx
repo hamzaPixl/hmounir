@@ -4,18 +4,18 @@ import { SkillCardProps } from '../types';
 
 const SkillCard: React.FC<SkillCardProps> = ({ title, skills }) => {
   return (
-    <div className="card mb-6">
-      <h3 className="text-xl font-semibold mb-4 text-dark">{title}</h3>
-      <div className="flex flex-wrap gap-2">
+    <div className="card">
+      <h3 className="text-base font-semibold mb-4 text-gray-900 dark:text-gray-100">{title}</h3>
+      <div className="flex flex-wrap gap-1.5">
         {skills.map((skill, index) => (
-          <span key={index} className="skill-badge flex items-center">
+          <span key={index} className="skill-badge">
             {skill.icon && (
               <Image
                 src={skill.icon}
                 alt={`${skill.name} icon`}
-                width={16}
-                height={16}
-                className="mr-2"
+                width={14}
+                height={14}
+                className="mr-1.5"
               />
             )}
             {skill.name}

@@ -1,0 +1,10 @@
+
+This is a placeholder for the Open Graph image generation script.
+In a real implementation, this would use puppeteer or sharp to generate
+optimized images for social media sharing.
+
+To implement this:
+1. Install puppeteer: npm install puppeteer
+2. Create a template HTML file for the OG image
+3. Use puppeteer to screenshot the template
+4. Save the screenshot as og-image.jpg and twitter-image.jpg

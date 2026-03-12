@@ -11,13 +11,49 @@ interface SEOProps {
 }
 
 const SEO: React.FC<SEOProps> = ({
-  title = 'Hamza Mounir | Senior Software Engineer',
-  description = 'Hamza Mounir - Senior Software Engineer specializing in scalable systems, cloud & microservices, and business-critical solutions.',
-  keywords = 'software engineer, developer, cloud, microservices, scalable systems, TypeScript, JavaScript, NestJS',
+  title = 'Hamza Mounir | Senior Software Engineer - Brussels',
+  description = 'Senior Software Engineer specializing in scalable systems, cloud architecture, AI systems, and technical leadership. Based in Brussels, Belgium.',
+  keywords = 'software engineer, cloud architecture, AI systems, scalable platforms, TypeScript, Python, React, Next.js, microservices, Brussels, Belgium',
   ogImage = 'https://hmounir.com/og-image.jpg',
   twitterImage = 'https://hmounir.com/twitter-image.jpg',
   canonicalUrl = 'https://hmounir.com/',
 }) => {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Hamza Mounir',
+    jobTitle: 'Senior Software Engineer',
+    url: 'https://hmounir.com',
+    email: 'hamza@pixldev.be',
+    telephone: '+32488203567',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Brussels',
+      addressCountry: 'BE',
+    },
+    worksFor: {
+      '@type': 'Organization',
+      name: 'Pixl SRL',
+      url: 'https://www.pixldev.be',
+      taxID: 'BE 0805.449.693',
+    },
+    sameAs: [
+      'https://github.com/hamzaPixl',
+      'https://www.linkedin.com/in/hamza-mounir-0a7bb6139/',
+      'https://www.pixldev.be',
+    ],
+    knowsAbout: [
+      'Software Architecture',
+      'Cloud Computing',
+      'AI Systems',
+      'TypeScript',
+      'Python',
+      'React',
+      'Next.js',
+      'Microservices',
+    ],
+  };
+
   return (
     <Head>
       <title>{title}</title>
@@ -26,26 +62,27 @@ const SEO: React.FC<SEOProps> = ({
       <meta name="keywords" content={keywords} />
       <meta name="author" content="Hamza Mounir" />
 
-      {/* Open Graph / Facebook */}
       <meta property="og:type" content="website" />
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={ogImage} />
-      <meta property="og:site_name" content="Hamza Mounir Portfolio" />
+      <meta property="og:site_name" content="Hamza Mounir" />
+      <meta property="og:locale" content="en_US" />
 
-      {/* Twitter */}
-      <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:url" content={canonicalUrl} />
-      <meta property="twitter:title" content={title} />
-      <meta property="twitter:description" content={description} />
-      <meta property="twitter:image" content={twitterImage} />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:url" content={canonicalUrl} />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={twitterImage} />
 
-      {/* Canonical URL */}
       <link rel="canonical" href={canonicalUrl} />
-
-      {/* Favicon */}
       <link rel="icon" href="/favicon.ico" />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
     </Head>
   );
 };

@@ -1,6 +1,7 @@
 # Allow all crawlers
 User-agent: *
 Allow: /
+Disallow: /dev
 
 # Sitemap location
 Sitemap: https://hmounir.com/sitemap.xml

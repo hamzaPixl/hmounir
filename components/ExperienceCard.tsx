@@ -11,41 +11,48 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
   logoUrl,
 }) => {
   return (
-    <div className="card mb-8">
-      <div className="flex flex-col md:flex-row justify-between mb-4">
-        <div className="flex items-center">
+    <div className="flex gap-5">
+      {/* Timeline column */}
+      <div className="flex flex-col items-center flex-shrink-0">
+        <div className="w-2 h-2 rounded-full bg-accent ring-[3px] ring-white dark:ring-[#0a0a0a] mt-1.5" />
+        <div className="w-px flex-1 bg-gray-200 dark:bg-gray-800 mt-2" />
+      </div>
+
+      {/* Content */}
+      <div className="flex-1 pb-12">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-x-3 gap-y-1 mb-2">
           {logoUrl && (
-            <div className="w-12 h-12 relative mr-4 flex-shrink-0">
-              <Image
-                src={logoUrl}
-                alt={`${company} logo`}
-                width={48}
-                height={48}
-                className="rounded-md object-contain"
-              />
-            </div>
+            <Image
+              src={logoUrl}
+              alt={`${company} logo`}
+              width={28}
+              height={28}
+              className="rounded object-contain"
+            />
           )}
-          <div>
-            <h3 className="text-xl font-semibold text-dark">{title}</h3>
-            <p className="text-lg font-medium text-gray-700">{company}</p>
+          <div className="flex-1 min-w-0">
+            <h3 className="text-base font-semibold text-gray-900 dark:text-gray-100">{title}</h3>
+            <p className="text-sm text-gray-500 dark:text-gray-500">
+              {company} · {period}
+            </p>
           </div>
         </div>
-        <div className="mt-2 md:mt-0">
-          <span className="bg-gray-100 px-3 py-1 rounded-full text-sm font-medium">{period}</span>
-        </div>
-      </div>
-      <p className="text-gray-700 mb-4">{description}</p>
-      {achievements && achievements.length > 0 && (
-        <div>
-          <ul className="list-disc pl-5 space-y-1">
+
+        <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed mb-3">
+          {description}
+        </p>
+
+        {achievements && achievements.length > 0 && (
+          <ul className="space-y-1">
             {achievements.map((achievement, index) => (
-              <li key={index} className="text-gray-700">
+              <li key={index} className="text-sm text-gray-500 dark:text-gray-400 pl-3.5 relative">
+                <span className="absolute left-0 top-[9px] w-1 h-1 rounded-full bg-gray-300 dark:bg-gray-700" />
                 {achievement}
               </li>
             ))}
           </ul>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 };

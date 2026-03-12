@@ -9,73 +9,42 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html lang="en">
+      <Html lang="en" className="">
         <Head>
-          {/* Preconnect to domains */}
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-
-          {/* Preload critical fonts */}
-          <link
-            rel="preload"
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-            as="style"
-          />
           <link
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
             rel="stylesheet"
           />
 
-          {/* Meta tags for SEO */}
-          <meta name="theme-color" content="#5DD170" />
+          <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
+          <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
           <meta
             name="description"
-            content="Hamza Mounir - Senior Software Engineer specializing in scalable systems, cloud & microservices, and business-critical solutions."
+            content="Hamza Mounir - Senior Software Engineer specializing in scalable systems, cloud architecture, AI systems, and technical leadership. Brussels, Belgium."
           />
           <meta
             name="keywords"
-            content="software engineer, developer, cloud, microservices, scalable systems, TypeScript, JavaScript, NestJS"
+            content="software engineer, cloud architecture, AI systems, scalable platforms, TypeScript, Python, React, Next.js, microservices, Brussels, Belgium, Pixl SRL"
           />
           <meta name="author" content="Hamza Mounir" />
           <meta property="og:type" content="website" />
-          <meta property="og:title" content="Hamza Mounir | Senior Software Engineer" />
+          <meta property="og:title" content="Hamza Mounir | Senior Software Engineer - Brussels" />
           <meta
             property="og:description"
-            content="Senior Software Engineer specializing in scalable systems, cloud & microservices, and business-critical solutions."
+            content="Senior Software Engineer specializing in scalable systems, cloud architecture, AI systems, and technical leadership."
           />
-          <meta property="og:site_name" content="Hamza Mounir Portfolio" />
-          <meta property="twitter:card" content="summary_large_image" />
-          <meta property="twitter:title" content="Hamza Mounir | Senior Software Engineer" />
+          <meta property="og:site_name" content="Hamza Mounir" />
+          <meta property="og:image" content="https://hmounir.com/og-image.jpg" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content="Hamza Mounir | Senior Software Engineer - Brussels" />
           <meta
-            property="twitter:description"
-            content="Senior Software Engineer specializing in scalable systems, cloud & microservices, and business-critical solutions."
+            name="twitter:description"
+            content="Senior Software Engineer specializing in scalable systems, cloud architecture, AI systems, and technical leadership."
           />
+          <meta name="twitter:image" content="https://hmounir.com/twitter-image.jpg" />
 
-          {/* Favicon */}
-          <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-touch-icon-57x57.png" />
-          <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-touch-icon-60x60.png" />
-          <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-touch-icon-72x72.png" />
-          <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-touch-icon-76x76.png" />
-          <link
-            rel="apple-touch-icon"
-            sizes="114x114"
-            href="/favicon/apple-touch-icon-114x114.png"
-          />
-          <link
-            rel="apple-touch-icon"
-            sizes="120x120"
-            href="/favicon/apple-touch-icon-120x120.png"
-          />
-          <link
-            rel="apple-touch-icon"
-            sizes="144x144"
-            href="/favicon/apple-touch-icon-144x144.png"
-          />
-          <link
-            rel="apple-touch-icon"
-            sizes="152x152"
-            href="/favicon/apple-touch-icon-152x152.png"
-          />
           <link
             rel="apple-touch-icon"
             sizes="180x180"
@@ -85,10 +54,16 @@ class MyDocument extends Document {
           <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
           <link rel="manifest" href="/manifest.json" />
           <link rel="shortcut icon" href="/favicon.ico" />
-          <meta name="msapplication-TileColor" content="#5DD170" />
+          <meta name="msapplication-TileColor" content="#000000" />
           <meta name="msapplication-TileImage" content="/favicon/mstile-144x144.png" />
         </Head>
         <body>
+          {/* Prevent dark mode flash */}
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.classList.add('dark')}}catch(e){}})()`,
+            }}
+          />
           <Main />
           <NextScript />
         </body>

@@ -6,9 +6,12 @@ const Section: React.FC<SectionProps> = ({ id, title, children, className = '' }
     <section id={id} className={`section ${className}`}>
       <div className="container">
         {title && (
-          <h2 className="text-3xl font-bold mb-8 pb-2 border-b-2 border-primary inline-block">
-            {title}
-          </h2>
+          <div className="flex items-center gap-2.5 mb-14">
+            <div className="w-1.5 h-1.5 rounded-full bg-accent" />
+            <span className="text-xs font-semibold tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500">
+              {title}
+            </span>
+          </div>
         )}
         {children}
       </div>
