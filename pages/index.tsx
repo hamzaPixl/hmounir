@@ -263,40 +263,88 @@ const Home: React.FC = () => {
               </div>
             </motion.div>
 
-            {/* Synq */}
+            {/* PIXL */}
             <motion.div variants={fadeIn}>
               <div className="flex items-baseline gap-3 mb-1">
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100">
-                  {t('projects.synq.name')}
+                  {t('projects.pixl.name')}
                 </h3>
-                <span className="text-sm text-accent">{t('projects.synq.subtitle')}</span>
+                <span className="text-sm text-accent">{t('projects.pixl.subtitle')}</span>
               </div>
               <a
-                href="https://synq.pixldev.be"
+                href="https://pixldev.be"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-xs text-gray-400 hover:text-accent transition-colors"
               >
-                synq.pixldev.be
+                pixldev.be
               </a>
               <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mt-4 mb-4 max-w-2xl">
-                {t('projects.synq.description')}
+                {t('projects.pixl.description')}
               </p>
               <ul className="space-y-1.5 mb-5">
-                {[1, 2, 3, 4, 5, 6, 7, 8].map(i => (
+                {[1, 2, 3, 4].map(i => (
                   <li key={i} className="text-sm text-gray-500 dark:text-gray-400 flex items-start">
                     <span className="w-1 h-1 bg-accent/60 rounded-full mr-2.5 mt-1.5 flex-shrink-0" />
-                    <span>{t(`projects.synq.feature${i}`)}</span>
+                    <span>{t(`projects.pixl.feature${i}`)}</span>
                   </li>
                 ))}
               </ul>
               <div className="flex flex-wrap gap-1.5">
                 {[
+                  'Python',
+                  'FastAPI',
+                  'React',
+                  'MCP',
+                  'RAG',
+                  'LLM Orchestration',
+                  'Cloudflare',
+                ].map(tech => (
+                  <span
+                    key={tech}
+                    className="text-[11px] border border-gray-200 dark:border-gray-800 rounded-full px-2.5 py-0.5 text-gray-400 dark:text-gray-500"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Pizza Roma */}
+            <motion.div variants={fadeIn}>
+              <div className="flex items-baseline gap-3 mb-1">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100">
+                  {t('projects.pizzaroma.name')}
+                </h3>
+                <span className="text-sm text-accent">{t('projects.pizzaroma.subtitle')}</span>
+              </div>
+              <a
+                href="https://pizzeriaroma-anderlecht.be"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs text-gray-400 hover:text-accent transition-colors"
+              >
+                pizzeriaroma-anderlecht.be
+              </a>
+              <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mt-4 mb-4 max-w-2xl">
+                {t('projects.pizzaroma.description')}
+              </p>
+              <ul className="space-y-1.5 mb-5">
+                {[1, 2, 3].map(i => (
+                  <li key={i} className="text-sm text-gray-500 dark:text-gray-400 flex items-start">
+                    <span className="w-1 h-1 bg-accent/60 rounded-full mr-2.5 mt-1.5 flex-shrink-0" />
+                    <span>{t(`projects.pizzaroma.feature${i}`)}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="flex flex-wrap gap-1.5">
+                {[
+                  'Next.js',
                   'TypeScript',
-                  'AI Agents',
-                  'DAG Engine',
-                  'Plugin Architecture',
-                  'Multi-Provider',
+                  'PostgreSQL',
+                  'Prisma',
+                  'Stripe',
+                  'NextAuth',
                 ].map(tech => (
                   <span
                     key={tech}
@@ -328,6 +376,7 @@ const Home: React.FC = () => {
                   'Node.js',
                   'NestJS',
                   'FastAPI',
+                  'SQLAlchemy',
                   'gRPC',
                   'REST',
                   'GraphQL',
@@ -349,8 +398,9 @@ const Home: React.FC = () => {
                   'LLM Integration',
                   'RAG',
                   'Vector Search',
+                  'MCP Tool Servers',
+                  'Multi-Agent Orchestration',
                   'Prompt Engineering',
-                  'Agent Orchestration',
                   'Streaming',
                   'Token Optimization',
                   'Guardrails',
@@ -364,7 +414,7 @@ const Home: React.FC = () => {
             <motion.div variants={fadeIn}>
               <h4 className="text-sm font-semibold text-accent mb-3">{t('skills.frontend')}</h4>
               <ul className="space-y-1.5">
-                {['React', 'Next.js', 'TailwindCSS', 'SSR / ISR', 'WCAG / ARIA', 'Responsive'].map(
+                {['React', 'Next.js', 'TypeScript', 'TailwindCSS', 'SSR / ISR', 'WCAG / ARIA', 'Responsive'].map(
                   s => (
                     <li key={s} className="text-sm text-gray-500 dark:text-gray-400">
                       {s}
@@ -379,13 +429,19 @@ const Home: React.FC = () => {
                 {[
                   'Azure',
                   'GCP',
+                  'AWS',
                   'Docker',
-                  'AKS',
+                  'Kubernetes (AKS)',
+                  'Azure DevOps',
+                  'GitHub Actions',
                   'CI/CD',
-                  'Git',
+                  'Terraform',
+                  'RabbitMQ',
+                  'Celery',
                   'PostgreSQL',
                   'MongoDB',
                   'Redis',
+                  'pgvector',
                 ].map(s => (
                   <li key={s} className="text-sm text-gray-500 dark:text-gray-400">
                     {s}
