@@ -338,21 +338,16 @@ const Home: React.FC = () => {
                 ))}
               </ul>
               <div className="flex flex-wrap gap-1.5">
-                {[
-                  'Next.js',
-                  'TypeScript',
-                  'PostgreSQL',
-                  'Prisma',
-                  'Stripe',
-                  'NextAuth',
-                ].map(tech => (
-                  <span
-                    key={tech}
-                    className="text-[11px] border border-gray-200 dark:border-gray-800 rounded-full px-2.5 py-0.5 text-gray-400 dark:text-gray-500"
-                  >
-                    {tech}
-                  </span>
-                ))}
+                {['Next.js', 'TypeScript', 'PostgreSQL', 'Prisma', 'Stripe', 'NextAuth'].map(
+                  tech => (
+                    <span
+                      key={tech}
+                      className="text-[11px] border border-gray-200 dark:border-gray-800 rounded-full px-2.5 py-0.5 text-gray-400 dark:text-gray-500"
+                    >
+                      {tech}
+                    </span>
+                  )
+                )}
               </div>
             </motion.div>
           </motion.div>
@@ -414,13 +409,19 @@ const Home: React.FC = () => {
             <motion.div variants={fadeIn}>
               <h4 className="text-sm font-semibold text-accent mb-3">{t('skills.frontend')}</h4>
               <ul className="space-y-1.5">
-                {['React', 'Next.js', 'TypeScript', 'TailwindCSS', 'SSR / ISR', 'WCAG / ARIA', 'Responsive'].map(
-                  s => (
-                    <li key={s} className="text-sm text-gray-500 dark:text-gray-400">
-                      {s}
-                    </li>
-                  )
-                )}
+                {[
+                  'React',
+                  'Next.js',
+                  'TypeScript',
+                  'TailwindCSS',
+                  'SSR / ISR',
+                  'WCAG / ARIA',
+                  'Responsive',
+                ].map(s => (
+                  <li key={s} className="text-sm text-gray-500 dark:text-gray-400">
+                    {s}
+                  </li>
+                ))}
               </ul>
             </motion.div>
             <motion.div variants={fadeIn}>
